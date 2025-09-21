@@ -40,7 +40,7 @@ export async function sendImageToGemini(
     const formData = new FormData();
     formData.append("image", blob, "image.jpg");
 
-    const result = await fetch("http://100.69.204.123:5001/api/analyze-image", {
+    const result = await fetch("http://127.0.0.1:5001/api/analyze-image", {
       method: "POST",
       body: formData,
     });
