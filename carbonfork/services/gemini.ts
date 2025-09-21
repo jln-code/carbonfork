@@ -53,7 +53,7 @@ export async function sendImageToGemini(imageUri: string): Promise<GeminiRespons
     // optionally pass finger length, etc.
     // formData.append("finger_length", "3");
 
-    const result = await fetch("http://100.69.204.123:5001/api/analyze-image", {
+    const result = await fetch("http://127.0.0.1:5001/api/analyze-image", {
       method: "POST",
       body: formData, // DO NOT set Content-Type manually; browser will set boundary.
     });
