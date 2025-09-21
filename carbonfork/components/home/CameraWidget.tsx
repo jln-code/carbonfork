@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import { LinearGradient } from "expo-linear-gradient";
 import { supabase } from "@/lib/supabase";
+import CameraModal from "../CameraModal";
 
 export function CameraWidget() {
+  const [isCameraVisible, setCameraVisible] = useState(false);
+  const [capturedPhotoUri, setCapturedPhotoUri] = useState<string | null>(null);
+
   const handleTakePhoto = () => {
-    // Mock function - in a real app this would open camera
-    Alert.alert(
-      "Camera Feature",
-      "Camera functionality would be implemented here using react-native-camera or expo-camera",
-      [{ text: "OK" }]
-    );
+    setCameraVisible(true);
+  };
+
+  const handlePhotoTaken = (photoUri: string) => {
+    setCapturedPhotoUri(photoUri);
+    console.log("Photo captured:", photoUri);
+
+    // You can save to storage, upload to server, etc.
+    Alert.alert("Success!", "Photo captured successfully!");
   };
 
   const handleHome = () => {
@@ -75,6 +82,12 @@ export function CameraWidget() {
       <View style={styles.labelContainer}>
         <Text style={styles.labelText}>Scan Food</Text>
       </View>
+
+      <CameraModal
+        isVisible={isCameraVisible}
+        onClose={() => setCameraVisible(false)}
+        onPhotoTaken={handlePhotoTaken}
+      />
     </View>
   );
 }

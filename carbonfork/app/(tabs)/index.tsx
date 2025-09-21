@@ -28,6 +28,7 @@ export default function App() {
     fetchMeals();
   }, [session?.user?.id]);
 
+  console.log(meals);
   // Mock data - in a real app this would come from a database
   const todayWaste = 0.8; // lbs
   const maxDailyWaste = 3.0; // lbs
