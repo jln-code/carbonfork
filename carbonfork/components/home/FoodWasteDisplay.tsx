@@ -1,20 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Icon from "react-native-vector-icons/Feather";
 import Entypo from "react-native-vector-icons/Entypo";
+import carbonFacts from "./CarbonFacts.json";
 
 interface FoodWasteDisplayProps {
   wasteAmount: number;
   maxWaste: number;
 }
 
-export function FoodWasteDisplay({
-  wasteAmount,
-  maxWaste,
-}: FoodWasteDisplayProps) {
+export function FoodWasteDisplay({ wasteAmount, maxWaste }: FoodWasteDisplayProps) {
+  const [currentFact, setCurrentFact] = useState('');
+
   // Calculate waste percentage (0-1)
   const wastePercentage = Math.min(wasteAmount / maxWaste, 1);
+
+  useEffect(() => {
+    const carbonSaved = (maxWaste - wasteAmount) * 2.1;
+
+    // Get a random fact from the combined list of all facts
+    const randomFact = carbonFacts[Math.floor(Math.random() * carbonFacts.length)];
+    
+    // Calculate the value based on the factor, or use a default if it's 0
+    const value = randomFact.factor === 0 ? 'many' : Math.round(carbonSaved / randomFact.factor);
+    
+    // Replace the placeholder and set the state
+    setCurrentFact(randomFact.template.replace('{value}', value));
+
+  }, [wasteAmount, maxWaste]); // Re-run effect when waste data changes
 
   // Dynamic solid gradient based on waste level - green to yellow to orange to red
   const getWasteGradient = () => {
@@ -23,7 +37,7 @@ export function FoodWasteDisplay({
       return ["#10b981", "#059669", "#047857"];
     } else if (wastePercentage < 0.5) {
       // Good - Green to yellow gradient
-      return ["#10b981", "#eab308", "#d97706"];
+      return ["#84a006ff", "#c3e93bff", "#f8f524ff"];
     } else if (wastePercentage < 0.75) {
       // Moderate - Yellow to orange gradient
       return ["#eab308", "#f97316", "#ea580c"];
@@ -41,28 +55,10 @@ export function FoodWasteDisplay({
   };
 
   const getWasteLevelColor = () => {
-    if (wastePercentage < 0.25) return "#4ade80";
-    if (wastePercentage < 0.5) return "#facc15";
-    if (wastePercentage < 0.75) return "#fb923c";
-    return "#f87171";
-  };
-
-  // Generate cute carbon facts
-  const getCuteFact = () => {
-    const carbonSaved = (maxWaste - wasteAmount) * 2.1;
-    const koalaNaps = Math.round(carbonSaved * 12.8); // Koalas sleep 18-22 hours
-    const butterflyFlights = Math.round(carbonSaved * 156); // A butterfly's daily flight
-    const catPurrs = Math.round(carbonSaved * 840); // A cat's hourly purrs
-
-    const facts = [
-      `${koalaNaps} koala naps 🐨`,
-      `${butterflyFlights} butterfly flights 🦋`,
-      `${catPurrs} kitty purrs 🐱`,
-      `${Math.round(carbonSaved * 24)} puppy tail wags 🐶`,
-      `${Math.round(carbonSaved * 3.6)} bunny hops 🐰`,
-    ];
-
-    return facts[Math.floor(Date.now() / (1000 * 60 * 60 * 24)) % facts.length]; // Daily rotation
+    if (wastePercentage < 0.25) return "#63ef6aff";
+    if (wastePercentage < 0.5) return "#9a9000ff";
+    if (wastePercentage < 0.75) return "#a13e00ff";
+    return "#b00000ff";
   };
 
   return (
@@ -95,7 +91,7 @@ export function FoodWasteDisplay({
           <Text style={styles.carbonAmount}>
             {((maxWaste - wasteAmount) * 2.1).toFixed(1)} kg CO₂
           </Text>
-          <Text style={styles.carbonFact}>That's like {getCuteFact()}!</Text>
+          <Text style={styles.carbonFact}>That's like {currentFact}!</Text>
         </View>
       </View>
     </LinearGradient>
