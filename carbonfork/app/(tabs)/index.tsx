@@ -5,10 +5,31 @@ import ParallaxScrollView from "@/components/parallax-scroll-view";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 import { Link } from "expo-router";
+import { getMealsForUser } from "@/services/meals";
+import { useSession } from "@/lib/SessionContext";
+import { useEffect, useState } from "react";
 
 const userName = "James";
 
 export default function HomeScreen() {
+  const { session } = useSession();
+  const [meals, setMeals] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchMeals = async () => {
+      if (!session?.user?.id) return;
+
+      const { data, error } = await getMealsForUser(session.user.id);
+      if (error) {
+        console.error("Error fetching meals:", error.message);
+      } else {
+        setMeals(data ?? []);
+      }
+    };
+
+    fetchMeals();
+  }, [session?.user?.id]);
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
