@@ -2,7 +2,7 @@
 #Gemini will then look at the picture and determine what food is on the plate, and how much of it there is.
 #The model will then output a json string and that string will be stored to a json file to be used by the carbon emission calculator
 
-#Before you run this, you MUST auth your way into the google cloud with $ export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/sa-key.json
+#Before you run this, you MUST auth your way into the google cloud with $ export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/sa-key.json"
 
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part
