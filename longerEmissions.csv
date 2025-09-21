@@ -1,0 +1,539 @@
+Name,Entity,CO2e
+Beef,Food,10.7-109
+Dark chocolate,Food,17-47
+Lamb,Food,10-57
+Coffee,Food,3.5-29
+Shrimp,Food,5.3-38
+Cheese,Food,5.3-24
+Fish,Food,2.1-15
+Pork,Food,2.1-13
+Chicken,Food,1.1-10
+Egg,Food,1.3-6.0
+Rice,Food,1.2-5.7
+Peanut,Food,0.8-4.3
+Tofu,Food,0.7-3.2
+Milk,Food,0.5-7.5
+Oatmeal,Food,0.7-2.5
+Wine,Food,0.7-1.8
+Wheat,Food,0.2-1.7
+Rye grains,Food,0.4-0.7
+Berries,Food,0.9-1.5
+Grape,Food,0.2-1.5
+Pea,Food,0.5-1.6
+Potato,Food,0.1-0.9
+Apple,Food,0.2-0.9
+Barley,Food,0.3-1.2
+Cassava,Food,0.3-1.3
+Soymilk,Food,0.4-1.4
+Soy oil,Food,1.8-6.3
+Olive oil,Food,1.0-5.4
+Onion,Food,0.1-0.9
+Leeks,Food,0.5-1.3
+Sugar,Food,0.6-3.2
+Beer,Food,0.7-1.1
+Bottled water,Food,0.4-0.5
+Mineral water,Food,0.3-0.5
+Breakfast cereal,Food,2.6-3.5
+Crackers,Food,1.0-1.6
+Egg pasta,Food,1.6-3.2
+Frozen raspberries,Food,1.2-1.9
+Ice cream,Food,1.0-4.3
+Margarine,Food,1.4-3.9
+Dried pasta,Food,1.0-2.1
+Pesto,Food,2.6-2.7
+Tomato purée,Food,0.7-1.3
+Tomato sauce,Food,0.7-1.2
+Dried yeast,Food,3.3-5.6
+Boneless beef,Food,26.0-26.0
+Bone in beef,Food,18.0-18.0
+Butter,Food,3.7-25.0
+Fresh cheese,Food,5.1-5.5
+Hard cheese,Food,6.2-9.6
+Honey,Food,1.2-1.7
+Boneless lambs,Food,25.0-25.0
+Bone in lambs,Food,17.0-17.0
+Boneless pork,Food,5.7-5.7
+Bone in pork,Food,3.4-3.4
+Boneless poultry,Food,3.9-3.9
+Bone in poultry,Food,2.1-2.1
+Snails,Food,0.7-5.3
+Yogurt,Food,1.2-2.6
+Mushroom,Food,0.1-2.8
+Seed,Food,0.9-3.5
+Frozen fishes,Food,2.2-8.7
+Tapioca,Food,0.3-0.8
+Sweet potatoes,Food,0.3-0.9
+Yukon gold potatoes,Food,0.3-0.3
+Buffalo,Food,49.0-101.0
+Rabbit,Food,3.8-9.3
+Plain bread,Food,0.7-0.9
+Whole bread,Food,0.7-0.8
+Plain crackers,Food,1.4-1.6
+Orange juice,Food,0.5-1.1
+Croissant,Food,1.6-2.6
+Cream,Food,2.1-7.9
+Mozzarella cheese,Food,4.6-10.0
+Cheddar cheese,Food,6.2-16.0
+Ham,Food,6.9-14.0
+Boneless chickens,Food,3.7-3.7
+Boneless turkey,Food,4.1-4.1
+Bone in chickens,Food,2.8-2.8
+Lactose free yogurt,Food,3.5-3.5
+Plain yogurt,Food,1.5-2.1
+Raisins,Food,0.8-1.0
+Strawberries,Food,0.2-2.9
+Avocado,Food,0.4-1.5
+Banana,Food,0.3-1.4
+Pineapple,Food,0.4-1.4
+Melon,Food,0.3-1.4
+Mandarin,Food,0.4-0.5
+Orange,Food,0.2-0.6
+Apricot,Food,0.3-0.9
+Cherry,Food,0.3-1.3
+Kiwifruit,Food,0.3-1.0
+Mango,Food,0.3-0.7
+Peach,Food,0.4-1.2
+Nectarine,Food,0.4-0.8
+Pear,Food,0.2-0.5
+Quince,Food,0.3-0.5
+Olive,Food,0.2-0.9
+Blueberry,Food,0.8-1.3
+Oat,Food,0.4-1.2
+Quinoa,Food,1.0-7.7
+Cowpea,Food,0.3-0.6
+Green bean,Food,0.2-2.7
+Soy,Food,0.4-1.6
+Almond,Food,0.5-3.8
+Cashew,Food,1.1-3.6
+Hazelnut,Food,0.4-4.9
+Pistachio nuts,Food,0.9-7.3
+Walnut,Food,0.5-4.2
+Gherkin,Food,0.1-2.1
+Lettuce,Food,0.1-4.7
+Pepper,Food,0.2-3.8
+Tomato,Food,0.2-6.1
+Asparagus,Food,0.4-2.5
+Cabbage,Food,0.1-1.3
+Spinach,Food,0.2-1.0
+Carrot,Food,0.1-1.0
+Broccoli,Food,0.4-1.7
+Cauliflower,Food,0.3-1.3
+Cucumber,Food,0.1-2.6
+Eggplant,Food,0.2-2.9
+Pumpkin,Food,0.2-1.1
+Zucchini,Food,0.1-1.9
+Anchovy,Food,0.8-2.1
+Cod fishes,Food,1.6-13.0
+Hake,Food,6.8-14.0
+Mackerel,Food,1.0-8.5
+Salmon,Food,1.6-8.9
+Sardine,Food,0.8-6.0
+Sea bass,Food,1.9-15.0
+Seatrout,Food,1.4-7.2
+Tuna,Food,1.4-10.0
+Herring,Food,1.0-2.8
+Lobster,Food,20.0-38.0
+Mussel,Food,1.9-9.8
+Tea,Food,7.1-25.0
+Durum flour,Food,0.5-1.1
+Sorghum flour,Food,0.6-1.3
+Chocolate,Food,4.3-9.6
+Vanilla extract,Food,1.2-4.3
+Soymeal,Food,0.6-1.6
+Canned beans,Food,0.1-1.6
+Beans,Food,0.3-1.8
+Peanut butter,Food,1.2-3.2
+Peanut oil,Food,2.9-4.2
+Peeled tomatoes,Food,1.2-1.3
+Milk chocolate,Food,3.6-13.0
+Espresso,Food,0.6-0.6
+Ketchup,Food,0.9-1.5
+Mayonnaise,Food,2.0-2.5
+Raspberries,Food,0.6-7.7
+Apple juice,Food,0.5-2.8
+Mango juice,Food,0.5-3.0
+Pineapple juice,Food,2.8-6.5
+Canned carrots,Food,1.0-1.6
+Canned corn,Food,1.3-1.4
+Almondmilk,Food,0.4-0.4
+Coconut milk,Food,0.4-0.8
+White wine,Food,0.4-1.2
+Ricotta cheese,Food,3.4-3.4
+Asiago cheese,Food,5.9-10.0
+Camembert cheese,Food,4.9-8.1
+Emmental cheese,Food,6.1-8.2
+Goat cheese,Food,5.1-8.5
+Grana Padano cheese,Food,6.1-15.0
+Parmesan cheese,Food,6.1-13.0
+Pecorino cheese,Food,17.0-17.0
+Goat milk,Food,1.4-1.5
+Bacon,Food,4.0-7.0
+Merguez,Food,24.0-39.0
+Sausage,Food,5.0-18.0
+Duck,Food,2.1-9.6
+Date,Food,0.3-2.8
+Coconut,Food,1.8-2.5
+Pomegranate,Food,0.3-1.2
+Clementine,Food,0.4-1.2
+Lemon,Food,0.2-0.9
+Lime,Food,0.2-0.5
+Carob,Food,1.1-1.1
+Fig,Food,0.3-1.1
+Guava,Food,0.3-1.1
+Plum,Food,0.3-1.0
+Watermelon,Food,0.4-0.6
+Blackberry,Food,0.4-1.4
+Cranberry,Food,0.9-1.5
+Currant,Food,0.6-1.8
+Gooseberry,Food,0.6-1.3
+Chickpea,Food,0.4-1.9
+Lentil,Food,0.4-1.1
+Chestnut,Food,0.4-2.2
+Mix nuts,Food,0.5-1.9
+Sesame,Food,0.9-5.2
+Sunflower seeds,Food,1.2-3.2
+Ginger,Food,0.5-1.0
+Garlic,Food,0.4-0.8
+Radish,Food,0.2-0.6
+Rutabaga,Food,0.3-0.9
+Salsify,Food,0.5-1.1
+Turnip,Food,0.4-0.8
+Artichoke,Food,0.3-3.9
+Celery,Food,0.2-1.4
+Celeriac,Food,0.5-0.9
+Monkfish,Food,10.0-14.0
+Carp,Food,1.7-7.9
+Catfish,Food,8.9-8.9
+Haddock,Food,2.8-13.0
+Ling fishes,Food,3.1-13.0
+Beef tongue,Food,18.0-30.0
+Plaice,Food,6.1-13.0
+Cervelat,Food,5.1-6.9
+Pollock,Food,1.0-11.0
+Sharks,Food,11.0-12.0
+Sole,Food,5.4-21.0
+Swordfish,Food,4.2-14.0
+Turbot,Food,9.0-19.0
+Whiting,Food,1.5-13.0
+Stick fishes,Food,2.1-2.3
+Octopus,Food,5.8-7.9
+Calamari,Food,5.7-12.0
+Agar seaweed,Food,6.7-6.7
+Dill,Food,0.8-0.8
+Pizza sauce,Food,0.7-0.7
+Basil,Food,0.8-1.5
+Baking soda,Food,1.1-5.6
+Cinnamon,Food,8.1-8.1
+Ground cinnamon,Food,8.1-8.1
+Cardamom,Food,8.1-8.1
+Ground cardamom,Food,8.1-8.1
+Chervil,Food,0.8-0.8
+Chives,Food,0.7-0.7
+Clove,Food,8.1-8.1
+Coriander seed,Food,1.0-1.1
+Chili peppers,Food,0.7-0.7
+Grapefruit,Food,0.5-0.9
+Cantaloupe,Food,0.3-0.9
+Bass,Food,3.6-13.0
+Turkey,Food,3.3-9.2
+Veal,Food,15.0-29.0
+Lima beans,Food,0.3-1.1
+French beans,Food,0.4-1.4
+Pinto beans,Food,0.7-0.7
+Millet,Food,0.4-0.9
+Sea salt,Food,0.6-0.6
+Herb,Food,0.8-1.6
+Spice,Food,8.1-8.1
+Mustard,Food,1.8-2.0
+Parsley,Food,1.1-3.3
+Rosemary,Food,0.8-1.5
+Thyme,Food,0.8-1.5
+Vinegar,Food,0.9-1.2
+Sage,Food,0.8-1.5
+Saffron,Food,8.1-8.1
+Syrup,Food,0.7-4.7
+Baby food,Food,0.7-0.9
+Oat milk,Food,0.5-0.5
+Coconut water,Food,1.1-1.1
+Energy drink,Food,0.5-0.5
+Champagne,Food,1.2-1.2
+Cider,Food,1.1-1.1
+Cocktail,Food,0.8-1.0
+Cola drink,Food,0.5-0.5
+Liqueur,Food,1.3-1.5
+Gin,Food,1.0-1.0
+Carrot juice,Food,0.3-0.3
+Lemon juice,Food,0.8-0.8
+Grape juice,Food,0.4-0.4
+Tomato juice,Food,0.5-0.5
+Juice,Food,0.3-1.1
+Nectar,Food,0.3-0.9
+Cocoa,Food,27.0-27.0
+Rum,Food,1.0-1.0
+Sake,Food,1.0-1.0
+Red wine,Food,1.2-1.2
+Vodka,Food,1.0-1.0
+Whiskey,Food,1.0-1.0
+Fishes sandwiches,Food,6.2-6.2
+Chicken sandwiches,Food,4.6-4.6
+Vegetarian hamburgers,Food,2.3-2.3
+Cheeseburger,Food,17.0-17.0
+Sauerkraut,Food,1.0-2.2
+Crepe,Food,1.6-4.9
+Fajita,Food,2.4-2.4
+Falafel,Food,0.8-0.8
+Hamburger,Food,17.0-17.0
+Frankfurter,Food,7.0-7.0
+Lasagne,Food,2.4-5.0
+Egg rolls,Food,3.3-3.3
+Ravioli,Food,2.0-14.0
+Meats pizzas,Food,2.4-7.3
+Cheeses pizzas,Food,1.6-3.3
+Vegetable pizzas,Food,1.8-3.2
+Margherita pizzas,Food,1.6-1.6
+Lorraine quiches,Food,4.2-4.2
+Risotto,Food,2.4-2.4
+Stir-fried rice,Food,2.5-2.9
+Caesar salad,Food,3.1-3.1
+Coleslaw,Food,1.0-1.0
+Potato salad,Food,3.1-4.4
+Tuna salad,Food,5.1-5.1
+Soufflé,Food,2.9-2.9
+Vegetable soup,Food,0.4-1.5
+Mushroom soup,Food,3.6-3.6
+Lentil soup,Food,0.5-0.5
+Chicken soup,Food,0.1-1.0
+Minestrone soup,Food,0.5-1.6
+Split pea soup,Food,0.5-0.5
+Sushi,Food,2.5-2.5
+Tripe,Food,20.0-23.0
+Bamboo shoots,Food,1.1-1.7
+Plantain,Food,0.7-1.3
+Swiss chard,Food,0.5-1.0
+Morel mushrooms,Food,0.5-0.5
+Potato chip,Food,1.5-1.5
+Bok choy,Food,0.9-1.3
+Brussels sprouts,Food,0.6-1.2
+Kale,Food,0.7-1.3
+Kohlrabi,Food,1.2-1.2
+Butternut squashes,Food,0.6-0.6
+Squashes,Food,0.6-1.1
+Cress,Food,0.9-0.9
+Watercress,Food,0.8-0.8
+Shallot,Food,0.4-0.9
+Broad beans,Food,0.4-1.1
+Prickly pears,Food,0.4-0.4
+French fries,Food,1.2-1.5
+Passion fruits,Food,0.9-0.9
+Okra,Food,1.6-1.6
+Navy beans,Food,0.3-0.6
+Kidney red beans,Food,0.4-1.2
+Persimmon,Food,0.9-0.9
+Kumquat,Food,0.5-0.5
+Mixed vegetables,Food,0.8-1.5
+Flax seeds,Food,3.6-3.6
+Lychee,Food,0.5-0.5
+Cocktail fruits,Food,0.6-1.1
+Sweet corn,Food,1.0-1.5
+Macadamia,Food,3.6-3.6
+Pecans,Food,3.6-3.6
+Brazil nuts,Food,7.4-7.4
+Sorrel,Food,0.6-0.6
+Parsnip,Food,0.5-0.9
+Papaya,Food,0.9-0.9
+Marzipan,Food,2.4-2.4
+Dried peaches,Food,8.2-8.2
+Pine nuts,Food,4.2-4.2
+Split peas,Food,0.4-0.9
+Sweet pepper,Food,1.2-1.8
+Mashed potatoes,Food,1.4-1.4
+Dried apples,Food,1.7-1.7
+Prunes,Food,2.9-2.9
+Rhubarb,Food,0.7-1.8
+Arugula,Food,0.9-0.9
+Escarole,Food,1.1-1.1
+Elderberries,Food,0.9-0.9
+Tahini,Food,2.8-2.8
+Tamarind,Food,0.5-0.5
+Taro,Food,0.6-1.4
+Tomato paste,Food,2.8-4.1
+Sun-dried tomatoes,Food,7.5-7.5
+Sorbet,Food,1.0-1.7
+Ice pops,Food,0.9-0.9
+Frozen yogurt,Food,1.7-1.7
+Custard,Food,1.5-3.4
+Blue cheese,Food,5.0-5.5
+Soy sauce,Food,0.8-0.8
+Maple syrup,Food,2.0-2.0
+Bran,Food,0.3-1.4
+Brie cheese,Food,5.1-5.2
+Cheesecake,Food,1.9-2.9
+Chocolate cakes,Food,7.8-9.2
+Lemon cakes,Food,1.7-1.7
+Whipped cream,Food,1.7-1.7
+Edam cheese,Food,5.9-5.9
+Feta cheese,Food,5.1-5.5
+Fontina cheese,Food,5.2-5.2
+Cream cheese,Food,1.4-2.2
+Gorgonzola cheese,Food,5.1-5.1
+Gouda cheese,Food,5.9-5.9
+Gruyere cheese,Food,6.1-6.2
+Condensed milk,Food,2.5-2.5
+1% milk fat milk,Food,1.3-1.3
+Skim milk,Food,1.2-1.2
+3.25% milk fat milk,Food,1.5-1.5
+Kefir,Food,1.4-1.5
+Dry milk,Food,15.0-15.0
+Milkshake,Food,1.4-1.4
+Meringue,Food,1.8-1.8
+Muenster cheese,Food,5.3-5.3
+Neufchatel cheese,Food,4.9-4.9
+French toast,Food,1.9-1.9
+Provolone cheese,Food,5.8-5.8
+Roquefort cheese,Food,6.0-6.0
+Tiramisu,Food,11.0-11.0
+Chicken nuggets,Food,5.9-5.9
+Snapper,Food,4.2-5.1
+Surimi,Food,6.6-6.6
+Dry sausages,Food,5.9-6.0
+Chicken sausages,Food,13.0-15.0
+Turkey sausages,Food,13.0-15.0
+Salami,Food,5.9-6.0
+Dogfish,Food,11.0-13.0
+Beef kidney,Food,22.0-30.0
+Protein fortified soy,Food,0.6-1.3
+Pork belly,Food,6.1-10.0
+Pork chop,Food,10.0-13.0
+Pork loin,Food,10.0-13.0
+Pork shoulder,Food,6.9-10.0
+Pork roast,Food,10.0-13.0
+Pork spare rib,Food,10.0-13.0
+Breaded fishes,Food,8.3-8.5
+Guineafowls,Food,6.8-7.0
+Perch,Food,5.1-6.5
+Scallops,Food,9.6-11.0
+Pate,Food,3.1-5.2
+Pancetta,Food,18.0-18.0
+Omelet,Food,3.4-4.6
+Goose,Food,7.0-9.3
+Mullet,Food,11.0-13.0
+Mutton,Food,32.0-40.0
+Salted cod fishes,Food,11.0-13.0
+Mortadella,Food,9.0-9.0
+Grouper,Food,4.2-4.2
+Oyster,Food,4.9-4.9
+Smoked haddocks,Food,11.0-11.0
+Ground turkey,Food,9.1-9.1
+Ground chickens,Food,9.1-9.1
+Ground beef,Food,16.0-42.0
+Chicken liver,Food,1.8-2.6
+Pork liver,Food,2.1-2.9
+Beef liver,Food,18.0-30.0
+Lamb livers,Food,21.0-29.0
+Halibut,Food,4.2-13.0
+Pheasant,Food,8.8-8.8
+Smelts,Food,1.5-1.9
+Crab,Food,31.0-31.0
+Muesli,Food,2.1-2.1
+Cookies,Food,1.8-6.7
+Chocolate cookies,Food,5.8-6.7
+Gnocchi,Food,0.8-0.9
+Croutons,Food,1.0-1.0
+Spelt,Food,1.1-1.2
+Brioche,Food,1.9-5.0
+Brownies,Food,7.2-7.2
+Fruitcake,Food,2.5-2.5
+Doughnuts,Food,1.6-5.6
+Goat,Food,40.0-51.0
+Beef heart,Food,22.0-30.0
+Quail,Food,9.3-9.3
+Granulated sugar,Food,0.6-0.6
+Brown sugar,Food,1.1-1.1
+Molasses,Food,1.3-1.3
+Marshmallows,Food,1.6-1.6
+Jam,Food,1.3-1.9
+White chocolate,Food,11.0-11.0
+Hard candy,Food,1.7-1.7
+Lollipops,Food,1.7-1.7
+Greek yogurt,Food,2.1-2.2
+Rice noodles,Food,1.3-1.4
+Tortillas,Food,1.1-1.1
+Apple pies,Food,2.6-2.6
+Shortbread cookies,Food,2.4-5.8
+Buckwheat,Food,1.1-1.2
+Wild rice,Food,1.3-2.8
+Basmati rice,Food,4.1-4.1
+Popcorn,Food,0.9-1.6
+Pound cakes,Food,3.7-3.7
+Polenta,Food,0.7-1.7
+Phyllo,Food,1.6-1.6
+Puff pastry,Food,3.5-3.6
+Rye flour,Food,0.6-0.6
+Rice flour,Food,3.1-3.1
+Chickpea flour,Food,0.9-0.9
+Barley flour,Food,0.7-0.7
+Wheat flour,Food,0.7-0.7
+Corn flour,Food,0.7-0.7
+Couscous,Food,0.7-1.7
+Corn chips,Food,1.5-1.5
+Tortilla chips,Food,1.5-1.5
+Whole wheat,Food,0.9-1.1
+Bulgur,Food,0.5-1.1
+Bagels,Food,0.8-0.8
+Cornstarch,Food,1.1-1.1
+Amaranth,Food,1.1-1.1
+Cumin,Food,8.1-8.1
+Turmeric,Food,8.1-8.1
+Curry powder,Food,8.1-8.1
+Tarragon,Food,8.1-8.1
+Fennel seeds,Food,0.8-0.8
+Fenugreek seed,Food,0.7-0.7
+Dried marjoram,Food,0.5-0.9
+Fresh mint,Food,0.3-0.9
+Nutmeg,Food,3.6-13.0
+Dried oregano,Food,3.3-9.2
+Paprika,Food,15.0-29.0
+Poppyseed,Food,0.3-1.1
+Black peppercorn,Food,0.4-1.4
+Cayenne,Food,0.7-0.7
+Salad dressing,Food,0.4-0.9
+Chia seed,Food,0.6-0.6
+Light cream,Food,0.8-1.6
+Vegetable oil,Food,8.1-8.1
+Avocado oil,Food,1.8-2.0
+Cod liver oil,Food,1.1-3.3
+Herring oil,Food,0.8-1.5
+Corn oil,Food,0.8-1.5
+Hazelnut oil,Food,0.9-1.2
+Grapeseed oil,Food,0.8-1.5
+Sardine oil,Food,8.1-8.1
+Salmon oil,Food,0.7-4.7
+Sesame oil,Food,0.7-0.9
+Corn,Food,0.5-0.5
+English muffins,Food,1.1-1.1
+Blueberry muffins,Food,0.5-0.5
+Chocolate croissants,Food,1.2-1.2
+French bread,Food,1.1-1.1
+Rye bread,Food,0.8-1.0
+Gingerbread,Food,0.5-0.5
+Pita,Food,1.3-1.5
+Hamburger buns,Food,1.0-1.0
+Hot dog buns,Food,0.3-0.3
+Baguette,Food,0.8-0.8
+Pizza dough,Food,0.4-0.4
+Brown rice,Food,0.5-0.5
+Steak flanks,Food,0.3-1.1
+Beef rib,Food,0.3-0.9
+Beef sirloin,Food,27.0-27.0
+Round beef,Food,1.0-1.0
+Beef chuck,Food,1.0-1.0
+Beef short rib,Food,1.2-1.2
+Chicken wings,Food,1.0-1.0
+Chicken legs,Food,1.0-1.0
+Chicken breasts,Food,6.2-6.2
+Chicken drumsticks,Food,4.6-4.6
+Chicken wholes,Food,2.3-2.3
+Lamb legs,Food,17.0-17.0
+Lamb chops,Food,1.0-2.2
+Yellowfin tuna,Food,1.6-4.9
+Albacore tuna,Food,2.4-2.4
