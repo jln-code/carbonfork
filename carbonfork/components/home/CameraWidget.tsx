@@ -60,7 +60,7 @@ export function CameraWidget() {
 
             {/* Main button */}
             <LinearGradient
-              colors={["#059669", "#047857"]}
+              colors={["#6700a3ff", "#3500bdff"]}
               style={styles.cameraButton}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}>
@@ -69,7 +69,7 @@ export function CameraWidget() {
 
             {/* Plus indicator */}
             <View style={styles.plusIndicator}>
-              <Icon name="plus" size={12} color="#059669" />
+              <Icon name="plus" size={12} color="#300596ff" />
             </View>
           </TouchableOpacity>
 
@@ -104,10 +104,10 @@ const styles = StyleSheet.create({
     zIndex: 9999,
   },
   navContainer: {
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    backgroundColor: "rgba(25, 36, 75, 0.55)",
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: "rgba(255, 255, 255, 0.2)",
+    borderColor: "rgba(116, 125, 157, 0.2)",
     padding: 8,
     shadowColor: "#000",
     shadowOffset: {
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   navButton: {
     padding: 12,
     borderRadius: 12,
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    backgroundColor: "rgba(71, 84, 134, 0.69)",
   },
   cameraButtonContainer: {
     position: "relative",
