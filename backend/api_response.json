@@ -1,0 +1,27 @@
+  [
+  {
+    "food_item": "Tater Tots",
+    "estimated_weight_grams": 130,
+    "volume_food": "150 ml"
+  },
+  {
+    "food_item": "Popcorn Chicken",
+    "estimated_weight_grams": 120,
+    "volume_food": "120 ml"
+  },
+  {
+    "food_item": "Southwest Vegetable Mix (Black Beans, Corn, Peppers, Onions)",
+    "estimated_weight_grams": 110,
+    "volume_food": "130 ml"
+  },
+  {
+    "food_item": "Shredded Cheese Blend",
+    "estimated_weight_grams": 35,
+    "volume_food": "80 ml"
+  },
+  {
+    "food_item": "Ketchup",
+    "estimated_weight_grams": 15,
+    "volume_food": "15 ml"
+  }
+  ]

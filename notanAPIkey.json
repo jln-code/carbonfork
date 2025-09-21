@@ -1,0 +1,14 @@
+{
+    "type": "service_account",
+    "project_id": "hello-world-472718",
+    "private_key_id": "YOUR-PRIVATE-KEY-ID",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nYOUR-PRIVATE-KEY-CONTENT\n-----END PRIVATE KEY-----\n",
+    "client_email": "your-service-account@your-project-id.iam.gserviceaccount.com",
+    "client_id": "780733215873-q3jo7o6m48jj2cr92vqcttu1k8au9g55.apps.googleusercontent.com",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "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",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/your-service-account@your-project-id.iam.gserviceaccount.com"
+}
+
