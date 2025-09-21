@@ -102,10 +102,10 @@ const styles = StyleSheet.create({
     zIndex: 9999,
   },
   navContainer: {
-    backgroundColor: "rgba(189, 204, 255, 0.55)",
+    backgroundColor: "rgba(25, 36, 75, 0.55)",
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: "rgba(255, 255, 255, 0.2)",
+    borderColor: "rgba(116, 125, 157, 0.2)",
     padding: 8,
     shadowColor: "#000",
     shadowOffset: {
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   navButton: {
     padding: 12,
     borderRadius: 12,
-    backgroundColor: "rgba(174, 193, 255, 0.6)",
+    backgroundColor: "rgba(71, 84, 134, 0.69)",
   },
   cameraButtonContainer: {
     position: "relative",
