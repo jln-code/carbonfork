@@ -2,17 +2,11 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 
-export function AnalyticsSection() {
-  const weeklyData = [
-    { day: "Mon", waste: 0.8 },
-    { day: "Tue", waste: 1.2 },
-    { day: "Wed", waste: 0.5 },
-    { day: "Thu", waste: 0.9 },
-    { day: "Fri", waste: 1.5 },
-    { day: "Sat", waste: 0.7 },
-    { day: "Sun", waste: 0.6 },
-  ];
+interface AnalyticsSectionProps {
+  weeklyData: { day: string; waste: number }[];
+}
 
+export function AnalyticsSection({ weeklyData }: AnalyticsSectionProps) {
   const insights = [
     {
       icon: "trending-down",

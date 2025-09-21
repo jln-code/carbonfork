@@ -14,7 +14,10 @@ export function FoodWasteDisplay({
   maxWaste,
 }: FoodWasteDisplayProps) {
   // Calculate waste percentage (0-1)
-  const wastePercentage = Math.min(wasteAmount / maxWaste, 1);
+  let wastePercentage = 0;
+  if (maxWaste != 0) {
+    wastePercentage = Math.min(wasteAmount / maxWaste, 1);
+  }
 
   // Dynamic solid gradient based on waste level - green to yellow to orange to red
   const getWasteGradient = () => {
