@@ -60,10 +60,18 @@ for item in range(len(food_items)):
     finalCarbon.append(weights[item]*(carbonValue/1000))
     carbonSum = sum(finalCarbon)
 
+
 print(finalCarbon)
 print()
 print(f"Total CO2 Lost :(")
 print(carbonSum)
+
+
+print()
+print()
+for item in range(len(finalCarbon)):
+    print(f"The {food_items[item]} wasted caused an increase of {finalCarbon[item]} KG of CO2")
+
 
 
 
