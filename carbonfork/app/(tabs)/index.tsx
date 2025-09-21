@@ -9,41 +9,78 @@ import { CameraWidget } from "@/components/home/CameraWidget";
 import { useSession } from "@/lib/SessionContext";
 import { getMealsForUser } from "@/services/meals";
 
+function getDayAbbreviation(dateString: string) {
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const date = new Date(dateString);
+  return days[date.getDay()];
+}
+
 export default function App() {
   const { session } = useSession();
   const [meals, setMeals] = useState<any[]>([]);
+  const [todayWaste, setTodayWaste] = useState(0);
+  const [maxDailyWaste, setMaxDailyWaste] = useState(0);
+  const [weeklyData, setWeeklyData] = useState<
+    { day: string; waste: number }[]
+  >([]);
 
   useEffect(() => {
     const fetchMeals = async () => {
       if (!session?.user?.id) return;
 
       const { data, error } = await getMealsForUser(session.user.id);
+
       if (error) {
         console.error("Error fetching meals:", error.message);
-      } else {
-        setMeals(data ?? []);
+        return;
       }
+
+      const mealsData = data ?? [];
+      setMeals(mealsData);
+
+      // Process the data immediately after fetching
+      const today = new Date().toISOString().split("T")[0];
+      const todayMeals = mealsData.filter((meal) => meal.meal_date === today);
+      const todayWasteCalories = todayMeals.reduce(
+        (sum, meal) => sum + meal.carbon_footprint,
+        0
+      );
+      setTodayWaste(todayWasteCalories);
+
+      const dailyWaste = mealsData.reduce((acc, meal) => {
+        const date = meal.meal_date;
+        if (!acc[date]) {
+          acc[date] = 0;
+        }
+        acc[date] += meal.carbon_footprint;
+        return acc;
+      }, {});
+
+      const weeklyDataNew: { day: string; waste: number }[] = [];
+      const currentDate = new Date();
+
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date(currentDate);
+        date.setDate(date.getDate() - i);
+        const dateString = date.toISOString().split("T")[0];
+        const dayAbbr = getDayAbbreviation(dateString);
+
+        const carbonFootprint = dailyWaste[dateString] || 0;
+
+        weeklyDataNew.push({
+          day: dayAbbr,
+          waste: carbonFootprint,
+        });
+      }
+
+      setWeeklyData(weeklyDataNew);
+      setMaxDailyWaste(Math.max(...weeklyDataNew.map((d) => d.waste)));
     };
 
     fetchMeals();
   }, [session?.user?.id]);
 
-  console.log(meals);
-  // Mock data - in a real app this would come from a database
-  const todayWaste = 0.8; // lbs
-  const maxDailyWaste = 3.0; // lbs
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-
-  // Mock weekly data for the animal chart
-  const weeklyData = [
-    { day: "Mon", waste: 0.8 },
-    { day: "Tue", waste: 1.2 },
-    { day: "Wed", waste: 0.5 },
-    { day: "Thu", waste: 0.9 },
-    { day: "Fri", waste: 1.5 },
-    { day: "Sat", waste: 0.7 },
-    { day: "Sun", waste: 0.6 },
-  ];
 
   const handleDateClick = (date: Date) => {
     setSelectedDate(date);
@@ -92,7 +129,7 @@ export default function App() {
 
           {/* Analytics Section */}
           <View style={styles.analyticsContainer}>
-            <AnalyticsSection />
+            <AnalyticsSection weeklyData={weeklyData} />
           </View>
 
           {/* Motivational Tips - softer design */}
