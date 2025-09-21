@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Icon from "react-native-vector-icons/Feather";
+import Entypo from "react-native-vector-icons/Entypo";
 
 interface FoodWasteDisplayProps {
   wasteAmount: number;
@@ -88,7 +89,7 @@ export function FoodWasteDisplay({
         {/* Carbon Impact with cute fact */}
         <View style={styles.carbonImpactContainer}>
           <View style={styles.carbonHeader}>
-            <Icon name="leaf" size={20} color="#ffffff" />
+            <Entypo name="globe" size={20} color="#ffffff" />
             <Text style={styles.carbonTitle}>Carbon Saved</Text>
           </View>
           <Text style={styles.carbonAmount}>
