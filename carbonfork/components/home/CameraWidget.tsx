@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import { LinearGradient } from "expo-linear-gradient";
+import { supabase } from "@/lib/supabase";
 
 export function CameraWidget() {
   const handleTakePhoto = () => {
@@ -17,8 +18,18 @@ export function CameraWidget() {
     console.log("Navigate to home");
   };
 
-  const handleStats = () => {
-    console.log("Navigate to stats");
+  const handleAccount = () => {
+    Alert.alert("Logout", "Are you sure you want to logout?", [
+      {
+        text: "Cancel",
+        style: "cancel",
+      },
+      {
+        text: "Logout",
+        style: "destructive",
+        onPress: () => supabase.auth.signOut(),
+      },
+    ]);
   };
 
   return (
@@ -53,9 +64,9 @@ export function CameraWidget() {
             </View>
           </TouchableOpacity>
 
-          {/* Stats button */}
-          <TouchableOpacity onPress={handleStats} style={styles.navButton}>
-            <Icon name="bar-chart-2" size={20} color="#ffffff" />
+          {/* Account button */}
+          <TouchableOpacity onPress={handleAccount} style={styles.navButton}>
+            <Icon name="log-out" size={20} color="#ffffff" />
           </TouchableOpacity>
         </View>
       </View>

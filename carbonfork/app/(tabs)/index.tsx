@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, ScrollView, StyleSheet, StatusBar } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FoodWasteDisplay } from "@/components/home/FoodWasteDisplay";
@@ -6,8 +6,28 @@ import { AnalyticsSection } from "@/components/home/AnalyticsSection";
 import { CalendarWidget } from "@/components/home/CalendarWidget";
 import { AnimalChart } from "@/components/home/AnimalChart";
 import { CameraWidget } from "@/components/home/CameraWidget";
+import { useSession } from "@/lib/SessionContext";
+import { getMealsForUser } from "@/services/meals";
 
 export default function App() {
+  const { session } = useSession();
+  const [meals, setMeals] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchMeals = async () => {
+      if (!session?.user?.id) return;
+
+      const { data, error } = await getMealsForUser(session.user.id);
+      if (error) {
+        console.error("Error fetching meals:", error.message);
+      } else {
+        setMeals(data ?? []);
+      }
+    };
+
+    fetchMeals();
+  }, [session?.user?.id]);
+
   // Mock data - in a real app this would come from a database
   const todayWaste = 0.8; // lbs
   const maxDailyWaste = 3.0; // lbs
@@ -124,7 +144,7 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingHorizontal: 24,
-    paddingBottom: 120, // Space for floating camera widget
+    paddingBottom: 140, // Space for floating camera widget
   },
   header: {
     alignItems: "center",
