@@ -39,7 +39,7 @@ export default function Auth() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Meal Logger</Text>
+      <Text style={styles.title}>carbonfork</Text>
 
       <TextInput
         style={styles.input}
