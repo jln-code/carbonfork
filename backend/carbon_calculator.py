@@ -16,10 +16,10 @@ for index, row in carbonData.iterrows():
         value_parts = value.split('-')
 
         value_low = float(value_parts[0])
-        print(value_low)
+        #print(value_low)
 
         value_high = float(value_parts[1])
-        print(f"The high value is: {value_high}")
+        #print(f"The high value is: {value_high}")
         if value_high != value_low:
             value_new = value_high - ((value_high - value_low)/2)
         else:
@@ -37,6 +37,7 @@ try:
     with open("api_response.json", "r") as file:
         aiReturnData = json.load(file)
     food_items = [item["food_item"] for item in aiReturnData]
+    weights = [item["estimated_weight_grams"] for item in aiReturnData]
     print("Successfully loaded from the JSON file!!")
     print(food_items)
 except FileNotFoundError:
@@ -47,9 +48,32 @@ except json.JSONDecodeError:
 
 #Using the food items that gemini found and put in the JSON file, look for them in the carbon emission CSV:
 #If a food item is found, print out its spot in the CSV list and its carbon emission value per KG.
-for item in food_items:
-    print(f"Looking in the dataset for: {item}")
-    print(carbonData[carbonData['Name'] == item])
+finalCarbon = []
+for item in range(len(food_items)):
+    #For every item that is found, look at its weight and the carbon it uses in the dataset. 
+    #Then multiply them together and put them in an array finalCarbon which contains in order, the ammount of carbon lost because of each food
+    print(f"Looking in the dataset for: {food_items[item]}")
+    carbonIndex = carbonData[carbonData['Name'] == food_items[item]].index[0]
+    carbonValue = carbonData.at[carbonIndex, 'CO2e']
+    print(carbonIndex)
+
+    finalCarbon.append(weights[item]*(carbonValue/1000))
+    carbonSum = sum(finalCarbon)
+
+
+print(finalCarbon)
+print()
+print(f"Total CO2 Lost :(")
+print(carbonSum)
+
+
+print()
+print()
+for item in range(len(finalCarbon)):
+    print(f"The {food_items[item]} wasted caused an increase of {finalCarbon[item]} KG of CO2")
+
+
+
 
 
 

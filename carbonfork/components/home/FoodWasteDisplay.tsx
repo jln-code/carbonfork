@@ -14,7 +14,10 @@ export function FoodWasteDisplay({ wasteAmount, maxWaste }: FoodWasteDisplayProp
   const [currentFact, setCurrentFact] = useState('');
 
   // Calculate waste percentage (0-1)
-  const wastePercentage = Math.min(wasteAmount / maxWaste, 1);
+  let wastePercentage = 0;
+  if (maxWaste != 0) {
+    wastePercentage = Math.min(wasteAmount / maxWaste, 1);
+  }
 
   useEffect(() => {
     const carbonSaved = (maxWaste - wasteAmount) * 2.1;
