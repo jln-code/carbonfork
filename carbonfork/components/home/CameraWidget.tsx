@@ -1,9 +1,16 @@
-import { Camera, Plus, Home, BarChart3 } from "lucide-react";
+import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
+import Icon from "react-native-vector-icons/Feather";
+import { LinearGradient } from "expo-linear-gradient";
 
 export function CameraWidget() {
   const handleTakePhoto = () => {
     // Mock function - in a real app this would open camera
-    console.log("Opening camera to scan food...");
+    Alert.alert(
+      "Camera Feature",
+      "Camera functionality would be implemented here using react-native-camera or expo-camera",
+      [{ text: "OK" }]
+    );
   };
 
   const handleHome = () => {
@@ -15,51 +22,124 @@ export function CameraWidget() {
   };
 
   return (
-    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-[9999]">
+    <View style={styles.container}>
       {/* Nav bar container */}
-      <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl p-2">
-        <div className="flex items-center space-x-2">
+      <View style={styles.navContainer}>
+        <View style={styles.navContent}>
           {/* Home button */}
-          <button
-            onClick={handleHome}
-            className="p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-200 group"
-          >
-            <Home className="h-5 w-5 text-white group-hover:scale-110 transition-transform" />
-          </button>
+          <TouchableOpacity onPress={handleHome} style={styles.navButton}>
+            <Icon name="home" size={20} color="#ffffff" />
+          </TouchableOpacity>
 
           {/* Main camera button - larger and prominent */}
-          <button
-            onClick={handleTakePhoto}
-            className="relative group mx-2"
-          >
-            {/* Outer ring with pulse animation */}
-            <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse opacity-75 group-hover:opacity-100 transition-opacity"></div>
-            
+          <TouchableOpacity
+            onPress={handleTakePhoto}
+            style={styles.cameraButtonContainer}>
+            {/* Outer ring with pulse effect */}
+            <View style={styles.pulseRing} />
+
             {/* Main button */}
-            <div className="relative bg-gradient-to-r from-green-600 to-emerald-700 p-4 rounded-full shadow-2xl transform group-hover:scale-105 transition-transform duration-200">
-              <Camera className="h-6 w-6 text-white" />
-            </div>
-            
+            <LinearGradient
+              colors={["#059669", "#047857"]}
+              style={styles.cameraButton}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}>
+              <Icon name="camera" size={24} color="#ffffff" />
+            </LinearGradient>
+
             {/* Plus indicator */}
-            <div className="absolute -top-1 -right-1 bg-white p-1 rounded-full">
-              <Plus className="h-3 w-3 text-green-600" />
-            </div>
-          </button>
+            <View style={styles.plusIndicator}>
+              <Icon name="plus" size={12} color="#059669" />
+            </View>
+          </TouchableOpacity>
 
           {/* Stats button */}
-          <button
-            onClick={handleStats}
-            className="p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-200 group"
-          >
-            <BarChart3 className="h-5 w-5 text-white group-hover:scale-110 transition-transform" />
-          </button>
-        </div>
-      </div>
-      
+          <TouchableOpacity onPress={handleStats} style={styles.navButton}>
+            <Icon name="bar-chart-2" size={20} color="#ffffff" />
+          </TouchableOpacity>
+        </View>
+      </View>
+
       {/* Label */}
-      <div className="text-center mt-2">
-        <span className="text-xs text-white/60">Scan Food</span>
-      </div>
-    </div>
+      <View style={styles.labelContainer}>
+        <Text style={styles.labelText}>Scan Food</Text>
+      </View>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    position: "absolute",
+    bottom: 24,
+    left: 0,
+    right: 0,
+    alignItems: "center",
+    zIndex: 9999,
+  },
+  navContainer: {
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "rgba(255, 255, 255, 0.2)",
+    padding: 8,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 16,
+    elevation: 16,
+  },
+  navContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  navButton: {
+    padding: 12,
+    borderRadius: 12,
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+  },
+  cameraButtonContainer: {
+    position: "relative",
+    marginHorizontal: 8,
+  },
+  pulseRing: {
+    position: "absolute",
+    top: -2,
+    left: -2,
+    right: -2,
+    bottom: -2,
+    borderRadius: 28,
+    backgroundColor: "rgba(16, 185, 129, 0.3)",
+  },
+  cameraButton: {
+    padding: 16,
+    borderRadius: 24,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  plusIndicator: {
+    position: "absolute",
+    top: -4,
+    right: -4,
+    backgroundColor: "#ffffff",
+    borderRadius: 10,
+    padding: 2,
+  },
+  labelContainer: {
+    marginTop: 8,
+  },
+  labelText: {
+    fontSize: 12,
+    color: "rgba(255, 255, 255, 0.6)",
+  },
+});

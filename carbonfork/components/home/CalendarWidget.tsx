@@ -1,6 +1,6 @@
-import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
-import { Card } from "../ui/card";
+import React, { useState } from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/Feather";
 
 interface CalendarWidgetProps {
   onDateClick: (date: Date) => void;
@@ -27,14 +27,18 @@ export function CalendarWidget({ onDateClick }: CalendarWidgetProps) {
   };
 
   const handleDateClick = (day: number) => {
-    const clickedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+    const clickedDate = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      day
+    );
     onDateClick(clickedDate);
   };
 
-  const navigateMonth = (direction: 'prev' | 'next') => {
-    setCurrentDate(prev => {
+  const navigateMonth = (direction: "prev" | "next") => {
+    setCurrentDate((prev) => {
       const newDate = new Date(prev);
-      if (direction === 'prev') {
+      if (direction === "prev") {
         newDate.setMonth(prev.getMonth() - 1);
       } else {
         newDate.setMonth(prev.getMonth() + 1);
@@ -47,112 +51,245 @@ export function CalendarWidget({ onDateClick }: CalendarWidgetProps) {
     const daysInMonth = getDaysInMonth(currentDate);
     const firstDay = getFirstDayOfMonth(currentDate);
     const days = [];
-    
+
     // Empty cells for days before month starts
     for (let i = 0; i < firstDay; i++) {
-      days.push(<div key={`empty-${i}`} className="h-8 w-8" />);
+      days.push(<View key={`empty-${i}`} style={styles.calendarDay} />);
     }
-    
+
     // Days of the month
     for (let day = 1; day <= daysInMonth; day++) {
-      const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+      const date = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        day
+      );
       const wasteLevel = getWasteLevelForDate(date);
       const isToday = date.toDateString() === new Date().toDateString();
-      
-      let bgColor = "bg-green-500/20";
-      if (wasteLevel > 0.7) bgColor = "bg-red-500/20";
-      else if (wasteLevel > 0.3) bgColor = "bg-orange-500/20";
-      
+
+      let backgroundColor = "rgba(16, 185, 129, 0.2)";
+      if (wasteLevel > 0.7) backgroundColor = "rgba(239, 68, 68, 0.2)";
+      else if (wasteLevel > 0.3) backgroundColor = "rgba(249, 115, 22, 0.2)";
+
       days.push(
-        <button
+        <TouchableOpacity
           key={day}
-          onClick={() => handleDateClick(day)}
-          className={`h-8 w-8 rounded-lg text-xs text-white/80 hover:text-white transition-all ${bgColor} ${
-            isToday ? 'ring-2 ring-white/40' : ''
-          } hover:scale-110`}
-        >
-          {day}
-        </button>
+          onPress={() => handleDateClick(day)}
+          style={[
+            styles.calendarDay,
+            styles.calendarDayButton,
+            { backgroundColor },
+            isToday && styles.todayBorder,
+          ]}>
+          <Text style={styles.calendarDayText}>{day}</Text>
+        </TouchableOpacity>
       );
     }
-    
+
     return days;
+  };
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
   };
 
   if (!isExpanded) {
     return (
-      <Card 
-        className="p-4 bg-white/8 border-white/15 backdrop-blur-sm cursor-pointer hover:bg-white/12 transition-all"
-        onClick={() => setIsExpanded(true)}
-      >
-        <div className="flex items-center space-x-3">
-          <Calendar className="h-5 w-5 text-white/70" />
-          <div>
-            <div className="text-white/90">
-              {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-            </div>
-            <div className="text-xs text-white/60">Tap to explore your year</div>
-          </div>
-        </div>
-      </Card>
+      <TouchableOpacity
+        style={styles.collapsedContainer}
+        onPress={() => setIsExpanded(true)}>
+        <View style={styles.collapsedContent}>
+          <Icon name="calendar" size={20} color="rgba(255, 255, 255, 0.7)" />
+          <View>
+            <Text style={styles.collapsedTitle}>{formatDate(currentDate)}</Text>
+            <Text style={styles.collapsedSubtitle}>
+              Tap to explore your year
+            </Text>
+          </View>
+        </View>
+      </TouchableOpacity>
     );
   }
 
   return (
-    <Card className="p-4 bg-white/8 border-white/15 backdrop-blur-sm">
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <button
-            onClick={() => navigateMonth('prev')}
-            className="p-1 rounded-lg hover:bg-white/10 transition-colors"
-          >
-            <ChevronLeft className="h-4 w-4 text-white/70" />
-          </button>
-          <div className="text-white">
-            {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-          </div>
-          <button
-            onClick={() => navigateMonth('next')}
-            className="p-1 rounded-lg hover:bg-white/10 transition-colors"
-          >
-            <ChevronRight className="h-4 w-4 text-white/70" />
-          </button>
-        </div>
-        
-        {/* Week days header */}
-        <div className="grid grid-cols-7 gap-1 text-xs text-white/60 text-center">
-          {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(day => (
-            <div key={day} className="h-6 flex items-center justify-center">{day}</div>
-          ))}
-        </div>
-        
-        {/* Calendar grid */}
-        <div className="grid grid-cols-7 gap-1">
-          {renderCalendar()}
-        </div>
-        
-        <div className="flex justify-between items-center text-xs text-white/60">
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-green-500/20 rounded"></div>
-            <span>Low waste</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-orange-500/20 rounded"></div>
-            <span>Medium</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-red-500/20 rounded"></div>
-            <span>High waste</span>
-          </div>
-        </div>
-        
-        <button
-          onClick={() => setIsExpanded(false)}
-          className="w-full text-xs text-white/60 hover:text-white/80 transition-colors"
-        >
-          Collapse
-        </button>
-      </div>
-    </Card>
+    <View style={styles.expandedContainer}>
+      <View style={styles.calendarHeader}>
+        <TouchableOpacity
+          onPress={() => navigateMonth("prev")}
+          style={styles.navButton}>
+          <Icon
+            name="chevron-left"
+            size={16}
+            color="rgba(255, 255, 255, 0.7)"
+          />
+        </TouchableOpacity>
+        <Text style={styles.monthTitle}>{formatDate(currentDate)}</Text>
+        <TouchableOpacity
+          onPress={() => navigateMonth("next")}
+          style={styles.navButton}>
+          <Icon
+            name="chevron-right"
+            size={16}
+            color="rgba(255, 255, 255, 0.7)"
+          />
+        </TouchableOpacity>
+      </View>
+
+      {/* Week days header */}
+      <View style={styles.weekHeader}>
+        {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
+          <View key={day} style={styles.weekDay}>
+            <Text style={styles.weekDayText}>{day}</Text>
+          </View>
+        ))}
+      </View>
+
+      {/* Calendar grid */}
+      <View style={styles.calendarGrid}>{renderCalendar()}</View>
+
+      <View style={styles.legend}>
+        <View style={styles.legendItem}>
+          <View
+            style={[
+              styles.legendColor,
+              { backgroundColor: "rgba(16, 185, 129, 0.2)" },
+            ]}
+          />
+          <Text style={styles.legendText}>Low waste</Text>
+        </View>
+        <View style={styles.legendItem}>
+          <View
+            style={[
+              styles.legendColor,
+              { backgroundColor: "rgba(249, 115, 22, 0.2)" },
+            ]}
+          />
+          <Text style={styles.legendText}>Medium</Text>
+        </View>
+        <View style={styles.legendItem}>
+          <View
+            style={[
+              styles.legendColor,
+              { backgroundColor: "rgba(239, 68, 68, 0.2)" },
+            ]}
+          />
+          <Text style={styles.legendText}>High waste</Text>
+        </View>
+      </View>
+
+      <TouchableOpacity
+        onPress={() => setIsExpanded(false)}
+        style={styles.collapseButton}>
+        <Text style={styles.collapseButtonText}>Collapse</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  collapsedContainer: {
+    padding: 16,
+    backgroundColor: "rgba(255, 255, 255, 0.08)",
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "rgba(255, 255, 255, 0.15)",
+  },
+  collapsedContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+  },
+  collapsedTitle: {
+    fontSize: 16,
+    color: "rgba(255, 255, 255, 0.9)",
+    fontWeight: "500",
+  },
+  collapsedSubtitle: {
+    fontSize: 12,
+    color: "rgba(255, 255, 255, 0.6)",
+  },
+  expandedContainer: {
+    padding: 16,
+    backgroundColor: "rgba(255, 255, 255, 0.08)",
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "rgba(255, 255, 255, 0.15)",
+    gap: 16,
+  },
+  calendarHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  navButton: {
+    padding: 4,
+    borderRadius: 8,
+  },
+  monthTitle: {
+    fontSize: 16,
+    color: "#ffffff",
+    fontWeight: "500",
+  },
+  weekHeader: {
+    flexDirection: "row",
+    gap: 4,
+  },
+  weekDay: {
+    flex: 1,
+    height: 24,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  weekDayText: {
+    fontSize: 12,
+    color: "rgba(255, 255, 255, 0.6)",
+  },
+  calendarGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 4,
+  },
+  calendarDay: {
+    width: "13.28%", // Roughly 1/7 minus gaps
+    height: 32,
+  },
+  calendarDayButton: {
+    borderRadius: 8,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  calendarDayText: {
+    fontSize: 12,
+    color: "rgba(255, 255, 255, 0.8)",
+  },
+  todayBorder: {
+    borderWidth: 2,
+    borderColor: "rgba(255, 255, 255, 0.4)",
+  },
+  legend: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  legendItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  legendColor: {
+    width: 12,
+    height: 12,
+    borderRadius: 2,
+  },
+  legendText: {
+    fontSize: 12,
+    color: "rgba(255, 255, 255, 0.6)",
+  },
+  collapseButton: {
+    alignItems: "center",
+    padding: 8,
+  },
+  collapseButtonText: {
+    fontSize: 12,
+    color: "rgba(255, 255, 255, 0.6)",
+  },
+});
