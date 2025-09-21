@@ -5,6 +5,18 @@ import os
 import tempfile
 from PIL import Image
 
+from werkzeug.utils import secure_filename
+from io import BytesIO
+
+# Optional HEIC support (install: pip install pillow-heif)
+try:
+    import pillow_heif
+    pillow_heif.register_heif_opener()
+except Exception:
+    pass  # If not installed, we'll still handle most cases via Pillow
+
+
+
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part
 import pandas as pd
@@ -13,13 +25,8 @@ import mimetypes
 
 # Load environment variables
 app = Flask(__name__)
-CORS(app, resources={
-    r"/api/*": {
-        "origins": ["http://localhost:5001"],
-        "methods": ["GET", "POST"],
-        "allow_headers": ["Content-Type"]
-    }
-})
+CORS(app, resources={r"/api/*": {"origins": "*"}})
+
 
 vertexai.init(project="carbonfork", location="us-central1")
 
@@ -682,70 +689,160 @@ from PIL import Image # Import Pillow
 
 # ... (rest of your existing code remains the same)
 
+ALLOWED_MODEL_MIMES = {"image/jpeg", "image/png"}
+
+def normalize_image_to_model_supported(image_file) -> tuple[bytes, str]:
+    """
+    Returns (image_bytes, mime) suitable for Vertex Gemini.
+    We convert anything that isn't a clean JPEG/PNG into JPEG.
+    """
+    filename = secure_filename(image_file.filename or "upload")
+    raw_bytes = image_file.read()
+    image_file.seek(0)  # reset for safety if needed elsewhere
+
+    if not raw_bytes or len(raw_bytes) == 0:
+        raise ValueError("Uploaded image is empty (0 bytes).")
+
+    # Try to open via Pillow; this also fixes many incorrect content-types
+    try:
+        img = Image.open(BytesIO(raw_bytes))
+        # If the format is already JPEG or PNG, re-encode to clean bytes to avoid oddities
+        fmt = (img.format or "").upper()
+        if fmt in {"JPEG", "JPG"}:
+            out = BytesIO()
+            if img.mode not in ("RGB", "L"):
+                img = img.convert("RGB")
+            img.save(out, format="JPEG", quality=92)
+            return out.getvalue(), "image/jpeg"
+        elif fmt == "PNG":
+            out = BytesIO()
+            # Preserve alpha by staying PNG
+            img.save(out, format="PNG", optimize=True)
+            return out.getvalue(), "image/png"
+        else:
+            # Anything else (HEIC/WEBP/GIF/TIFF/unknown) -> convert to JPEG
+            if img.mode not in ("RGB", "L"):
+                img = img.convert("RGB")
+            out = BytesIO()
+            img.save(out, format="JPEG", quality=92)
+            return out.getvalue(), "image/jpeg"
+    except Exception as e:
+        # If Pillow couldn't open it, try a last-resort: assume JPEG bytes
+        # (This covers rare cases where the file is valid but not recognized)
+        if raw_bytes[:2] == b"\xff\xd8":
+            # Looks like a JPEG magic header; pass through
+            return raw_bytes, "image/jpeg"
+        raise ValueError(f"Could not decode the uploaded image: {e}")
+
+
 @app.route('/api/analyze-image', methods=['POST'])
 def analyze_image():
+    # --- DEBUG: do NOT consume the stream here ---
+    try:
+        print("=== /api/analyze-image DEBUG ===")
+        print("Content-Type:", request.headers.get("Content-Type"))
+        print("Request method:", request.method)
+        print("Files keys:", list(request.files.keys()))
+        print("Form keys:", list(request.form.keys()))
+        print("Content-Length:", request.content_length)
+        print("================================")
+    except Exception as _dbg_e:
+        print("DEBUG logging failed:", _dbg_e)
+
     temp_file_path = None
     converted_temp_path = None
 
     try:
-        if 'image' not in request.files:
-            return jsonify({'success': False, 'error': 'No image provided'}), 400
-        
-        image_file = request.files['image']
-        
-        if image_file.filename == '':
-            return jsonify({'success': False, 'error': 'No image selected'}), 400
-        
-        finger_length = request.form.get('finger_length', 3)
-        
-        # Save the original image to a temporary file
-        temp_file_path = tempfile.NamedTemporaryFile(delete=False).name
-        image_file.save(temp_file_path)
-        
-        # Determine the MIME type from the file object
-        mime_type = image_file.content_type
-        
-        # --- The Fix: Convert HEIC to JPEG if needed ---
-        if mime_type == 'image/heic' or mime_type == 'image/heif':
-            # Create a new temporary path for the converted file
-            converted_temp_path = tempfile.NamedTemporaryFile(suffix='.jpeg', delete=False).name
+        # Allow optional finger length (inches) from form; default to 3.0
+        try:
+            finger_length = float(request.form.get("finger_length", "3.0"))
+        except Exception:
+            finger_length = 3.0
+
+        image_part = None
+        image_file = (
+            request.files.get("image")
+            or request.files.get("file")
+            or request.files.get("photo")
+            or request.files.get("picture")
+        )
+
+        if image_file:
+            if getattr(image_file, "filename", "") == "":
+                return jsonify({'success': False, 'error': 'No image selected'}), 400
+
             try:
-                # Open the HEIC image using Pillow
-                img = Image.open(temp_file_path)
-                # Ensure it's in a format suitable for JPEG conversion (e.g., RGB)
-                if img.mode != 'RGB':
-                    img = img.convert('RGB')
-                # Save the converted image as JPEG
-                img.save(converted_temp_path, 'JPEG')
-                
-                # Update the path and MIME type to use for the API call
-                file_to_send = converted_temp_path
-                mime_type = 'image/jpeg'
-                
-            except Exception as e:
-                return jsonify({'success': False, 'error': f'Failed to convert HEIC image: {str(e)}'}), 500
+                image_bytes, mime_type = normalize_image_to_model_supported(image_file)
+            except ValueError as ve:
+                return jsonify({'success': False, 'error': str(ve)}), 400
+
+            if mime_type not in ALLOWED_MODEL_MIMES:
+                # Force JPEG if Pillow produced something else
+                try:
+                    img = Image.open(BytesIO(image_bytes))
+                    if img.mode not in ("RGB", "L"):
+                        img = img.convert("RGB")
+                    out = BytesIO()
+                    img.save(out, format="JPEG", quality=92)
+                    image_bytes = out.getvalue()
+                    mime_type = "image/jpeg"
+                except Exception as e:
+                    return jsonify({'success': False, 'error': f'Could not convert image: {e}'}), 400
+
+            image_part = Part.from_data(data=image_bytes, mime_type=mime_type)
+
         else:
-            file_to_send = temp_file_path
-        # --- End of Fix ---
+            # Fallback: raw body with image/* Content-Type
+            ct = request.headers.get("Content-Type", "")
+            if ct.startswith("image/"):
+                raw = request.get_data(cache=True)  # cache=True so we don't lose it later
+                if not raw:
+                    return jsonify({'success': False, 'error': 'Raw image body is empty'}), 400
+                try:
+                    img = Image.open(BytesIO(raw))
+                    if img.mode not in ("RGB", "L"):
+                        img = img.convert("RGB")
+                    out = BytesIO()
+                    out_format = "PNG" if img.mode == "L" and hasattr(img, "info") and img.info.get("transparency") else "JPEG"
+                    if out_format == "PNG":
+                        img.save(out, format="PNG", optimize=True)
+                        mime_type = "image/png"
+                    else:
+                        img.save(out, format="JPEG", quality=92)
+                        mime_type = "image/jpeg"
+                    image_bytes = out.getvalue()
+                    image_part = Part.from_data(data=image_bytes, mime_type=mime_type)
+                except Exception as e:
+                    return jsonify({"success": False, "error": f"Raw image body could not be decoded: {e}"}), 400
+            else:
+                return jsonify({
+                    "success": False,
+                    "error": "No image provided",
+                    "debug": {
+                        "content_type": request.headers.get("Content-Type"),
+                        "files_keys": list(request.files.keys()),
+                        "form_keys": list(request.form.keys()),
+                    },
+                }), 400
 
-        # Read the image data from the correct file path
-        with open(file_to_send, "rb") as f:
-            image_data = f.read()
-
-        # Create Part with the correct MIME type
-        image_part = Part.from_data(data=image_data, mime_type=mime_type)
-        
-        # ... (rest of your original code remains the same) ...
+        # --- Prompt & model ---
         prompt_text = f"""
-I have a plate of food. Please identify the food items and estimate their portion sizes in grams, as well as looking at how much of the plate the food is taking up, and then estimate the volume of that specific food. If there is a hand in the picture, know that {finger_length} inches is the middle finger length. Otherwise use a standard plate size as refrence to the plate in the picture, or if you see other refrence points in the picture you think are more accurate, use those for scale as well. Provide the response as a JSON object with the keys 'food_item' and 'estimated_weight_grams' and 'volume_food'. When you are detecting the type of food and returning the JSON, have the food item string your returning be something on the more basic side so that we can use a known carbon dataset, for EX: instead of 'southwest vegtable mix' break down that mix into what you see 'black beans, corn,' ect as different food items. Same for things like Popcorn chicken, should be more basic like 'chicken nugget' or 'breaded chicken'. Also attached is a CSV of a food name list that once you identify the food on the plate, you should pick the closet one on the list to put on the JSON. HOWEVER STILL USE THE WEIGHT FROM YOUR INITIAL PREDICTION NOT THE NEW FOOD NAME
+I have a plate of food. Please identify the food items and estimate their portion sizes in grams, and also estimate the volume of each item.
+If there is a hand in the picture, assume a middle finger length of {finger_length} inches for scale. Otherwise, use standard plate size or other visible references.
+Return a JSON array where each element has keys: 'food_item', 'estimated_weight_grams', 'volume_food'.
+
+IMPORTANT:
+- Use basic/generic names to match a carbon dataset (e.g., 'chicken nugget' instead of 'popcorn chicken'; split mixes like 'black beans, corn' etc.).
+- After you identify the food, map its name to the closest item in the attached list, but KEEP your original weight estimate.
 """
-        
+
         model = GenerativeModel("gemini-2.5-pro")
         response = model.generate_content([image_part, prompt_text, list_text])
-        
-        response_text = response.text.strip()
+
+        response_text = (response.text or "").strip()
         print(f"Raw Gemini response: {response_text}")
-        
+
+        # Strip code fences if present
         if "```json" in response_text:
             json_start = response_text.find("```json") + 7
             json_end = response_text.find("```", json_start)
@@ -754,21 +851,20 @@ I have a plate of food. Please identify the food items and estimate their portio
             json_start = response_text.find("```") + 3
             json_end = response_text.rfind("```")
             response_text = response_text[json_start:json_end].strip()
-        
+
         try:
             ai_return_data = json.loads(response_text)
-            
             if not isinstance(ai_return_data, list):
                 raise ValueError("Response is not a list")
-            
+
             food_items = [item.get("food_item", "") for item in ai_return_data]
             weights = [item.get("estimated_weight_grams", 0) for item in ai_return_data]
-            
+
             print(f"Detected foods: {food_items}")
             print(f"Weights: {weights}")
-            
+
             final_carbon, food_details, total_carbon = calculate_carbon_footprint(food_items, weights)
-            
+
             return jsonify({
                 'success': True,
                 'detected_foods': ai_return_data,
@@ -780,22 +876,21 @@ I have a plate of food. Please identify the food items and estimate their portio
                 },
                 'summary': f"Total CO2 equivalent: {round(total_carbon, 4)} kg ({round(total_carbon * 1000, 2)} grams)"
             })
-            
+
         except json.JSONDecodeError as e:
             print(f"JSON decode error: {e}")
             print(f"Attempted to parse: {response_text}")
             return jsonify({
-                'success': False, 
+                'success': False,
                 'error': f'Failed to parse AI response as JSON: {str(e)}',
                 'raw_response': response_text
             }), 500
-        
+
     except Exception as e:
         print(f"Error in analyze_image: {str(e)}")
         return jsonify({'success': False, 'error': str(e)}), 500
-    
+
     finally:
-        # Clean up temporary files
         if temp_file_path and os.path.exists(temp_file_path):
             os.unlink(temp_file_path)
         if converted_temp_path and os.path.exists(converted_temp_path):
