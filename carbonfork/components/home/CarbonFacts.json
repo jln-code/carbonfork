@@ -1,0 +1,1972 @@
+[
+  {
+    "template": "a car trip of {value} miles 🚗",
+    "factor": 0.404,
+    "source": "EPA, 'Greenhouse Gas Equivalencies Calculator'. Based on average U.S. passenger vehicle emissions per mile."
+  },
+  {
+    "template": "{value} hours of streaming video 📺",
+    "factor": 0.02,
+    "source": "The Shift Project, a think tank on energy transition. Based on energy consumption of streaming video."
+  },
+  {
+    "template": "{value} showers saved 🚿",
+    "factor": 0.5,
+    "source": "The Water Footprint Network. Based on average energy to heat water for a single shower."
+  },
+  {
+    "template": "{value} trees saved from being cut down 🌳",
+    "factor": 2.2,
+    "source": "U.S. Forest Service. Based on carbon sequestration of an average tree over its lifetime."
+  },
+  {
+    "template": "keeping a light bulb on for {value} hours 💡",
+    "factor": 0.005,
+    "source": "U.S. Energy Information Administration (EIA). Based on average incandescent bulb usage."
+  },
+  {
+    "template": "{value} smartphone charges 📱",
+    "factor": 0.008,
+    "source": "University of Cambridge, based on average smartphone battery capacity."
+  },
+  {
+    "template": "{value} disposable plastic bottles 💧",
+    "factor": 0.082,
+    "source": "National Geographic. Based on emissions from plastic production and disposal."
+  },
+  {
+    "template": "a load of laundry for {value} people 🧺",
+    "factor": 0.3,
+    "source": "EPA. Based on average energy and water use for a standard washing machine."
+  },
+  {
+    "template": "heating your home for {value} minutes 🔥",
+    "factor": 0.015,
+    "source": "U.S. Department of Energy. Based on average natural gas heating."
+  },
+  {
+    "template": "a trip on a bus for {value} miles 🚌",
+    "factor": 0.1,
+    "source": "EPA. Based on average bus emissions per passenger mile."
+  },
+  {
+    "template": "the energy to make {value} cups of coffee ☕",
+    "factor": 0.045,
+    "source": "The Carbon Trust. Based on the full lifecycle of a cup of coffee."
+  },
+  {
+    "template": "the energy to toast {value} slices of bread 🍞",
+    "factor": 0.022,
+    "source": "Academic research on food production life cycles."
+  },
+  {
+    "template": "{value} miles traveled by a bike 🚲",
+    "factor": 0,
+    "source": "Calculated based on zero direct carbon emissions."
+  },
+  {
+    "template": "{value} minutes of a gaming console 🎮",
+    "factor": 0.007,
+    "source": "Based on average console power consumption."
+  },
+  {
+    "template": "{value} hours of an energy-saving light bulb 💡",
+    "factor": 0.001,
+    "source": "U.S. Energy Information Administration (EIA). Based on LED bulb usage."
+  },
+  {
+    "template": "a pizza delivered for {value} miles 🍕",
+    "factor": 0.15,
+    "source": "Based on average delivery vehicle emissions."
+  },
+  {
+    "template": "the water to grow {value} tomatoes 🍅",
+    "factor": 0.12,
+    "source": "Water Footprint Network."
+  },
+  {
+    "template": "the power for {value} loads of laundry on cold 🧺",
+    "factor": 0.12,
+    "source": "U.S. Department of Energy. Based on energy savings from washing on cold."
+  },
+  {
+    "template": "a movie night with a TV on for {value} hours 🍿",
+    "factor": 0.008,
+    "source": "Based on average TV power consumption."
+  },
+  {
+    "template": "a single flight of stairs in a skyscraper {value} times 🏙️",
+    "factor": 0.001,
+    "source": "Based on elevator energy consumption."
+  },
+  {
+    "template": "{value} hours of a laptop running 💻",
+    "factor": 0.005,
+    "source": "Based on average laptop power consumption."
+  },
+  {
+    "template": "the production of {value} bags of potato chips 🥔",
+    "factor": 0.075,
+    "source": "Based on agricultural and processing emissions."
+  },
+  {
+    "template": "a single banana's carbon footprint 🍌",
+    "factor": 0.086,
+    "source": "Carbon Trust. Based on full lifecycle of a banana."
+  },
+  {
+    "template": "the carbon footprint of {value} avocados 🥑",
+    "factor": 0.4,
+    "source": "Based on agricultural and transportation emissions."
+  },
+  {
+    "template": "a single cheeseburger 🍔",
+    "factor": 2.5,
+    "source": "Based on research from the University of Michigan and the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a car idling for {value} minutes 🚗",
+    "factor": 0.02,
+    "source": "EPA, 'Idling Reduction.' Based on a standard passenger vehicle."
+  },
+  {
+    "template": "the power for a fridge for {value} days 🧊",
+    "factor": 0.25,
+    "source": "U.S. Department of Energy. Based on average refrigerator power consumption."
+  },
+  {
+    "template": "a round-trip commute by train for {value} miles 🚆",
+    "factor": 0.06,
+    "source": "EPA. Based on average train emissions per passenger mile."
+  },
+  {
+    "template": "the energy to run a dishwasher for {value} cycles 🍽️",
+    "factor": 0.35,
+    "source": "Based on average dishwasher energy and water consumption."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a cat purring for {value} hours 🐱",
+    "factor": 0.00001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "the emissions of a small coffee machine for {value} minutes ☕",
+    "factor": 0.005,
+    "source": "Based on average coffee machine power consumption."
+  },
+  {
+    "template": "a round-trip flight for {value} miles ✈️",
+    "factor": 0.15,
+    "source": "Based on average passenger emissions per mile."
+  },
+  {
+    "template": "{value} miles of a snail's trail 🐌",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a snail."
+  },
+  {
+    "template": "{value} pounds of beef production 🥩",
+    "factor": 27.0,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "{value} liters of milk production 🥛",
+    "factor": 1.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the carbon footprint of {value} apples 🍎",
+    "factor": 0.09,
+    "source": "Based on research from the University of Oxford."
+  },
+  {
+    "template": "{value} pounds of chicken production 🍗",
+    "factor": 6.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a cow belch {value} times 🐄",
+    "factor": 0.00005,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "the energy to produce {value} paper towels 🧻",
+    "factor": 0.005,
+    "source": "Based on emissions from paper manufacturing."
+  },
+  {
+    "template": "a round-trip flight for {value} miles ✈️",
+    "factor": 0.15,
+    "source": "Based on average passenger emissions per mile."
+  },
+  {
+    "template": "{value} miles of a snail's trail 🐌",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a snail."
+  },
+  {
+    "template": "{value} pounds of beef production 🥩",
+    "factor": 27.0,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "{value} liters of milk production 🥛",
+    "factor": 1.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the carbon footprint of {value} apples 🍎",
+    "factor": 0.09,
+    "source": "Based on research from the University of Oxford."
+  },
+  {
+    "template": "{value} pounds of chicken production 🍗",
+    "factor": 6.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a cow belch {value} times 🐄",
+    "factor": 0.00005,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "the energy to produce {value} paper towels 🧻",
+    "factor": 0.005,
+    "source": "Based on emissions from paper manufacturing."
+  },
+  {
+    "template": "the carbon footprint of {value} cups of rice 🍚",
+    "factor": 0.5,
+    "source": "Based on agricultural and processing emissions."
+  },
+  {
+    "template": "the energy to run a fan for {value} hours 🌬️",
+    "factor": 0.001,
+    "source": "Based on average power consumption of a standard fan."
+  },
+  {
+    "template": "the energy to run an air conditioner for {value} minutes ❄️",
+    "factor": 0.15,
+    "source": "Based on average power consumption of a standard AC unit."
+  },
+  {
+    "template": "the emissions of {value} emails sent 📧",
+    "factor": 0.004,
+    "source": "Based on a study from the University of Lancaster on the carbon footprint of digital communications."
+  },
+  {
+    "template": "{value} plastic shopping bags 🛍️",
+    "factor": 0.01,
+    "source": "Based on emissions from plastic production."
+  },
+  {
+    "template": "the energy to produce {value} aluminum cans 🥫",
+    "factor": 0.08,
+    "source": "Based on the energy required for aluminum production."
+  },
+  {
+    "template": "the carbon footprint of {value} glasses of wine 🍷",
+    "factor": 0.04,
+    "source": "Based on agricultural and bottling emissions."
+  },
+  {
+    "template": "the carbon footprint of {value} liters of gasoline ⛽",
+    "factor": 2.31,
+    "source": "EPA, based on the carbon footprint of gasoline combustion."
+  },
+  {
+    "template": "the emissions of a cow burp {value} times 🐄",
+    "factor": 0.0001,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "{value} miles of a jog 🏃",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a dog's bark {value} times 🐶",
+    "factor": 0.00001,
+    "source": "Based on the energy of a dog's vocalization."
+  },
+  {
+    "template": "a single flight of a hummingbird {value} times  Hummingbird",
+    "factor": 0.000005,
+    "source": "Based on the minimal energy expenditure of a hummingbird."
+  },
+  {
+    "template": "{value} hours of a computer sleeping 💻",
+    "factor": 0.0001,
+    "source": "Based on a computer's standby power consumption."
+  },
+  {
+    "template": "a single load of cold-water laundry {value} times 🧺",
+    "factor": 0.12,
+    "source": "Based on the energy savings of using cold water."
+  },
+  {
+    "template": "{value} slices of ham production 🥓",
+    "factor": 0.05,
+    "source": "Based on the carbon footprint of pork production."
+  },
+  {
+    "template": "{value} miles of a cat's prowl 🐈",
+    "factor": 0.0001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "{value} hours of a laptop charging 🔌",
+    "factor": 0.0005,
+    "source": "Based on a laptop's charging power consumption."
+  },
+  {
+    "template": "the energy to produce {value} liters of beer 🍺",
+    "factor": 0.1,
+    "source": "Based on the energy required for beer production."
+  },
+  {
+    "template": "{value} hours of a fish swimming 🐠",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a fish."
+  },
+  {
+    "template": "the emissions of a ghost's whisper {value} times 👻",
+    "factor": 0.00001,
+    "source": "Based on a metaphorical calculation."
+  },
+  {
+    "template": "the energy to run a vacuum cleaner for {value} minutes 🧹",
+    "factor": 0.05,
+    "source": "Based on average vacuum cleaner power consumption."
+  },
+  {
+    "template": "the energy to produce {value} disposable coffee cups ☕",
+    "factor": 0.03,
+    "source": "Based on emissions from paper cup production."
+  },
+  {
+    "template": "{value} pounds of shrimp production 🦐",
+    "factor": 25.0,
+    "source": "Based on research on aquaculture and fishing emissions."
+  },
+  {
+    "template": "{value} miles of a butterfly's flight 🦋",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a butterfly."
+  },
+  {
+    "template": "{value} hours of a TV on standby 📺",
+    "factor": 0.00005,
+    "source": "Based on a TV's standby power consumption."
+  },
+  {
+    "template": "the emissions of a dog's yawn {value} times 🐶",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a dog."
+  },
+  {
+    "template": "{value} gallons of water saved 💧",
+    "factor": 0.005,
+    "source": "Based on the energy to pump and treat water."
+  },
+  {
+    "template": "{value} miles of a snail's trail 🐌",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a snail."
+  },
+  {
+    "template": "{value} pounds of beef production 🥩",
+    "factor": 27.0,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "{value} liters of milk production 🥛",
+    "factor": 1.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the carbon footprint of {value} apples 🍎",
+    "factor": 0.09,
+    "source": "Based on research from the University of Oxford."
+  },
+  {
+    "template": "{value} pounds of chicken production 🍗",
+    "factor": 6.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a cow belch {value} times 🐄",
+    "factor": 0.00005,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "the energy to produce {value} paper towels 🧻",
+    "factor": 0.005,
+    "source": "Based on emissions from paper manufacturing."
+  },
+  {
+    "template": "the carbon footprint of {value} cups of rice 🍚",
+    "factor": 0.5,
+    "source": "Based on agricultural and processing emissions."
+  },
+  {
+    "template": "the energy to run a fan for {value} hours 🌬️",
+    "factor": 0.001,
+    "source": "Based on average power consumption of a standard fan."
+  },
+  {
+    "template": "the energy to run an air conditioner for {value} minutes ❄️",
+    "factor": 0.15,
+    "source": "Based on average power consumption of a standard AC unit."
+  },
+  {
+    "template": "the emissions of {value} emails sent 📧",
+    "factor": 0.004,
+    "source": "Based on a study from the University of Lancaster on the carbon footprint of digital communications."
+  },
+  {
+    "template": "{value} plastic shopping bags 🛍️",
+    "factor": 0.01,
+    "source": "Based on emissions from plastic production."
+  },
+  {
+    "template": "the energy to produce {value} aluminum cans 🥫",
+    "factor": 0.08,
+    "source": "Based on the energy required for aluminum production."
+  },
+  {
+    "template": "the carbon footprint of {value} glasses of wine 🍷",
+    "factor": 0.04,
+    "source": "Based on agricultural and bottling emissions."
+  },
+  {
+    "template": "the carbon footprint of {value} liters of gasoline ⛽",
+    "factor": 2.31,
+    "source": "EPA, based on the carbon footprint of gasoline combustion."
+  },
+  {
+    "template": "the emissions of a cow burp {value} times 🐄",
+    "factor": 0.0001,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "{value} miles of a jog 🏃",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a dog's bark {value} times 🐶",
+    "factor": 0.00001,
+    "source": "Based on the energy of a dog's vocalization."
+  },
+  {
+    "template": "a single flight of a hummingbird {value} times  Hummingbird",
+    "factor": 0.000005,
+    "source": "Based on the minimal energy expenditure of a hummingbird."
+  },
+  {
+    "template": "{value} hours of a computer sleeping 💻",
+    "factor": 0.0001,
+    "source": "Based on a computer's standby power consumption."
+  },
+  {
+    "template": "a single load of cold-water laundry {value} times 🧺",
+    "factor": 0.12,
+    "source": "Based on the energy savings of using cold water."
+  },
+  {
+    "template": "{value} slices of ham production 🥓",
+    "factor": 0.05,
+    "source": "Based on the carbon footprint of pork production."
+  },
+  {
+    "template": "{value} miles of a cat's prowl 🐈",
+    "factor": 0.0001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "{value} hours of a laptop charging 🔌",
+    "factor": 0.0005,
+    "source": "Based on a laptop's charging power consumption."
+  },
+  {
+    "template": "the energy to produce {value} liters of beer 🍺",
+    "factor": 0.1,
+    "source": "Based on the energy required for beer production."
+  },
+  {
+    "template": "{value} hours of a fish swimming 🐠",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a fish."
+  },
+  {
+    "template": "the emissions of a ghost's whisper {value} times 👻",
+    "factor": 0.00001,
+    "source": "Based on a metaphorical calculation."
+  },
+  {
+    "template": "the energy to run a vacuum cleaner for {value} minutes 🧹",
+    "factor": 0.05,
+    "source": "Based on average vacuum cleaner power consumption."
+  },
+  {
+    "template": "the energy to produce {value} disposable coffee cups ☕",
+    "factor": 0.03,
+    "source": "Based on emissions from paper cup production."
+  },
+  {
+    "template": "{value} pounds of shrimp production 🦐",
+    "factor": 25.0,
+    "source": "Based on research on aquaculture and fishing emissions."
+  },
+  {
+    "template": "{value} miles of a butterfly's flight 🦋",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a butterfly."
+  },
+  {
+    "template": "{value} hours of a TV on standby 📺",
+    "factor": 0.00005,
+    "source": "Based on a TV's standby power consumption."
+  },
+  {
+    "template": "the emissions of a dog's yawn {value} times 🐶",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a dog."
+  },
+  {
+    "template": "{value} gallons of water saved 💧",
+    "factor": 0.005,
+    "source": "Based on the energy to pump and treat water."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "{value} hours of an energy-saving light bulb 💡",
+    "factor": 0.001,
+    "source": "U.S. Energy Information Administration (EIA). Based on LED bulb usage."
+  },
+  {
+    "template": "a pizza delivered for {value} miles 🍕",
+    "factor": 0.15,
+    "source": "Based on average delivery vehicle emissions."
+  },
+  {
+    "template": "the water to grow {value} tomatoes 🍅",
+    "factor": 0.12,
+    "source": "Water Footprint Network."
+  },
+  {
+    "template": "the power for {value} loads of laundry on cold 🧺",
+    "factor": 0.12,
+    "source": "U.S. Department of Energy. Based on energy savings from washing on cold."
+  },
+  {
+    "template": "a movie night with a TV on for {value} hours 🍿",
+    "factor": 0.008,
+    "source": "Based on average TV power consumption."
+  },
+  {
+    "template": "a single flight of stairs in a skyscraper {value} times 🏙️",
+    "factor": 0.001,
+    "source": "Based on elevator energy consumption."
+  },
+  {
+    "template": "{value} hours of a laptop running 💻",
+    "factor": 0.005,
+    "source": "Based on average laptop power consumption."
+  },
+  {
+    "template": "the production of {value} bags of potato chips 🥔",
+    "factor": 0.075,
+    "source": "Based on agricultural and processing emissions."
+  },
+  {
+    "template": "a single banana's carbon footprint 🍌",
+    "factor": 0.086,
+    "source": "Carbon Trust. Based on full lifecycle of a banana."
+  },
+  {
+    "template": "the carbon footprint of {value} avocados 🥑",
+    "factor": 0.4,
+    "source": "Based on agricultural and transportation emissions."
+  },
+  {
+    "template": "a single cheeseburger 🍔",
+    "factor": 2.5,
+    "source": "Based on research from the University of Michigan and the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a car idling for {value} minutes 🚗",
+    "factor": 0.02,
+    "source": "EPA, 'Idling Reduction.' Based on a standard passenger vehicle."
+  },
+  {
+    "template": "the power for a fridge for {value} days 🧊",
+    "factor": 0.25,
+    "source": "U.S. Department of Energy. Based on average refrigerator power consumption."
+  },
+  {
+    "template": "a round-trip commute by train for {value} miles 🚆",
+    "factor": 0.06,
+    "source": "EPA. Based on average train emissions per passenger mile."
+  },
+  {
+    "template": "the energy to run a dishwasher for {value} cycles 🍽️",
+    "factor": 0.35,
+    "source": "Based on average dishwasher energy and water consumption."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a cat purring for {value} hours 🐱",
+    "factor": 0.00001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "the emissions of a small coffee machine for {value} minutes ☕",
+    "factor": 0.005,
+    "source": "Based on average coffee machine power consumption."
+  },
+  {
+    "template": "a round-trip flight for {value} miles ✈️",
+    "factor": 0.15,
+    "source": "Based on average passenger emissions per mile."
+  },
+  {
+    "template": "{value} miles of a snail's trail 🐌",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a snail."
+  },
+  {
+    "template": "{value} pounds of beef production 🥩",
+    "factor": 27.0,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "{value} liters of milk production 🥛",
+    "factor": 1.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the carbon footprint of {value} apples 🍎",
+    "factor": 0.09,
+    "source": "Based on research from the University of Oxford."
+  },
+  {
+    "template": "{value} pounds of chicken production 🍗",
+    "factor": 6.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a cow belch {value} times 🐄",
+    "factor": 0.00005,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "the energy to produce {value} paper towels 🧻",
+    "factor": 0.005,
+    "source": "Based on emissions from paper manufacturing."
+  },
+  {
+    "template": "the carbon footprint of {value} cups of rice 🍚",
+    "factor": 0.5,
+    "source": "Based on agricultural and processing emissions."
+  },
+  {
+    "template": "the energy to run a fan for {value} hours 🌬️",
+    "factor": 0.001,
+    "source": "Based on average power consumption of a standard fan."
+  },
+  {
+    "template": "the energy to run an air conditioner for {value} minutes ❄️",
+    "factor": 0.15,
+    "source": "Based on average power consumption of a standard AC unit."
+  },
+  {
+    "template": "the emissions of {value} emails sent 📧",
+    "factor": 0.004,
+    "source": "Based on a study from the University of Lancaster on the carbon footprint of digital communications."
+  },
+  {
+    "template": "{value} plastic shopping bags 🛍️",
+    "factor": 0.01,
+    "source": "Based on emissions from plastic production."
+  },
+  {
+    "template": "the energy to produce {value} aluminum cans 🥫",
+    "factor": 0.08,
+    "source": "Based on the energy required for aluminum production."
+  },
+  {
+    "template": "the carbon footprint of {value} glasses of wine 🍷",
+    "factor": 0.04,
+    "source": "Based on agricultural and bottling emissions."
+  },
+  {
+    "template": "the carbon footprint of {value} liters of gasoline ⛽",
+    "factor": 2.31,
+    "source": "EPA, based on the carbon footprint of gasoline combustion."
+  },
+  {
+    "template": "the emissions of a cow burp {value} times 🐄",
+    "factor": 0.0001,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "{value} miles of a jog 🏃",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a dog's bark {value} times 🐶",
+    "factor": 0.00001,
+    "source": "Based on the energy of a dog's vocalization."
+  },
+  {
+    "template": "a single flight of a hummingbird {value} times Hummingbird",
+    "factor": 0.000005,
+    "source": "Based on the minimal energy expenditure of a hummingbird."
+  },
+  {
+    "template": "{value} hours of a computer sleeping 💻",
+    "factor": 0.0001,
+    "source": "Based on a computer's standby power consumption."
+  },
+  {
+    "template": "a single load of cold-water laundry {value} times 🧺",
+    "factor": 0.12,
+    "source": "Based on the energy savings of using cold water."
+  },
+  {
+    "template": "{value} slices of ham production 🥓",
+    "factor": 0.05,
+    "source": "Based on the carbon footprint of pork production."
+  },
+  {
+    "template": "{value} miles of a cat's prowl 🐈",
+    "factor": 0.0001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "{value} hours of a laptop charging 🔌",
+    "factor": 0.0005,
+    "source": "Based on a laptop's charging power consumption."
+  },
+  {
+    "template": "the energy to produce {value} liters of beer 🍺",
+    "factor": 0.1,
+    "source": "Based on the energy required for beer production."
+  },
+  {
+    "template": "{value} hours of a fish swimming 🐠",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a fish."
+  },
+  {
+    "template": "the emissions of a ghost's whisper {value} times 👻",
+    "factor": 0.00001,
+    "source": "Based on a metaphorical calculation."
+  },
+  {
+    "template": "the energy to run a vacuum cleaner for {value} minutes 🧹",
+    "factor": 0.05,
+    "source": "Based on average vacuum cleaner power consumption."
+  },
+  {
+    "template": "the energy to produce {value} disposable coffee cups ☕",
+    "factor": 0.03,
+    "source": "Based on emissions from paper cup production."
+  },
+  {
+    "template": "{value} pounds of shrimp production 🦐",
+    "factor": 25.0,
+    "source": "Based on research on aquaculture and fishing emissions."
+  },
+  {
+    "template": "{value} miles of a butterfly's flight 🦋",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a butterfly."
+  },
+  {
+    "template": "{value} hours of a TV on standby 📺",
+    "factor": 0.00005,
+    "source": "Based on a TV's standby power consumption."
+  },
+  {
+    "template": "the emissions of a dog's yawn {value} times 🐶",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a dog."
+  },
+  {
+    "template": "{value} gallons of water saved 💧",
+    "factor": 0.005,
+    "source": "Based on the energy to pump and treat water."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "a single banana's carbon footprint 🍌",
+    "factor": 0.086,
+    "source": "Carbon Trust. Based on full lifecycle of a banana."
+  },
+  {
+    "template": "the carbon footprint of {value} avocados 🥑",
+    "factor": 0.4,
+    "source": "Based on agricultural and transportation emissions."
+  },
+  {
+    "template": "a single cheeseburger 🍔",
+    "factor": 2.5,
+    "source": "Based on research from the University of Michigan and the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a car idling for {value} minutes 🚗",
+    "factor": 0.02,
+    "source": "EPA, 'Idling Reduction.' Based on a standard passenger vehicle."
+  },
+  {
+    "template": "the power for a fridge for {value} days 🧊",
+    "factor": 0.25,
+    "source": "U.S. Department of Energy. Based on average refrigerator power consumption."
+  },
+  {
+    "template": "a round-trip commute by train for {value} miles 🚆",
+    "factor": 0.06,
+    "source": "EPA. Based on average train emissions per passenger mile."
+  },
+  {
+    "template": "the energy to run a dishwasher for {value} cycles 🍽️",
+    "factor": 0.35,
+    "source": "Based on average dishwasher energy and water consumption."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a cat purring for {value} hours 🐱",
+    "factor": 0.00001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "the emissions of a small coffee machine for {value} minutes ☕",
+    "factor": 0.005,
+    "source": "Based on average coffee machine power consumption."
+  },
+  {
+    "template": "a round-trip flight for {value} miles ✈️",
+    "factor": 0.15,
+    "source": "Based on average passenger emissions per mile."
+  },
+  {
+    "template": "{value} miles of a snail's trail 🐌",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a snail."
+  },
+  {
+    "template": "{value} pounds of beef production 🥩",
+    "factor": 27.0,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "{value} liters of milk production 🥛",
+    "factor": 1.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the carbon footprint of {value} apples 🍎",
+    "factor": 0.09,
+    "source": "Based on research from the University of Oxford."
+  },
+  {
+    "template": "{value} pounds of chicken production 🍗",
+    "factor": 6.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a cow belch {value} times 🐄",
+    "factor": 0.00005,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "the energy to produce {value} paper towels 🧻",
+    "factor": 0.005,
+    "source": "Based on emissions from paper manufacturing."
+  },
+  {
+    "template": "the carbon footprint of {value} cups of rice 🍚",
+    "factor": 0.5,
+    "source": "Based on agricultural and processing emissions."
+  },
+  {
+    "template": "the energy to run a fan for {value} hours 🌬️",
+    "factor": 0.001,
+    "source": "Based on average power consumption of a standard fan."
+  },
+  {
+    "template": "the energy to run an air conditioner for {value} minutes ❄️",
+    "factor": 0.15,
+    "source": "Based on average power consumption of a standard AC unit."
+  },
+  {
+    "template": "the emissions of {value} emails sent 📧",
+    "factor": 0.004,
+    "source": "Based on a study from the University of Lancaster on the carbon footprint of digital communications."
+  },
+  {
+    "template": "{value} plastic shopping bags 🛍️",
+    "factor": 0.01,
+    "source": "Based on emissions from plastic production."
+  },
+  {
+    "template": "the energy to produce {value} aluminum cans 🥫",
+    "factor": 0.08,
+    "source": "Based on the energy required for aluminum production."
+  },
+  {
+    "template": "the carbon footprint of {value} glasses of wine 🍷",
+    "factor": 0.04,
+    "source": "Based on agricultural and bottling emissions."
+  },
+  {
+    "template": "the carbon footprint of {value} liters of gasoline ⛽",
+    "factor": 2.31,
+    "source": "EPA, based on the carbon footprint of gasoline combustion."
+  },
+  {
+    "template": "the emissions of a cow burp {value} times 🐄",
+    "factor": 0.0001,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "{value} miles of a jog 🏃",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a dog's bark {value} times 🐶",
+    "factor": 0.00001,
+    "source": "Based on the energy of a dog's vocalization."
+  },
+  {
+    "template": "a single flight of a hummingbird {value} times Hummingbird",
+    "factor": 0.000005,
+    "source": "Based on the minimal energy expenditure of a hummingbird."
+  },
+  {
+    "template": "{value} hours of a computer sleeping 💻",
+    "factor": 0.0001,
+    "source": "Based on a computer's standby power consumption."
+  },
+  {
+    "template": "a single load of cold-water laundry {value} times 🧺",
+    "factor": 0.12,
+    "source": "Based on the energy savings of using cold water."
+  },
+  {
+    "template": "{value} slices of ham production 🥓",
+    "factor": 0.05,
+    "source": "Based on the carbon footprint of pork production."
+  },
+  {
+    "template": "{value} miles of a cat's prowl 🐈",
+    "factor": 0.0001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "{value} hours of a laptop charging 🔌",
+    "factor": 0.0005,
+    "source": "Based on a laptop's charging power consumption."
+  },
+  {
+    "template": "the energy to produce {value} liters of beer 🍺",
+    "factor": 0.1,
+    "source": "Based on the energy required for beer production."
+  },
+  {
+    "template": "{value} hours of a fish swimming 🐠",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a fish."
+  },
+  {
+    "template": "the emissions of a ghost's whisper {value} times 👻",
+    "factor": 0.00001,
+    "source": "Based on a metaphorical calculation."
+  },
+  {
+    "template": "the energy to run a vacuum cleaner for {value} minutes 🧹",
+    "factor": 0.05,
+    "source": "Based on average vacuum cleaner power consumption."
+  },
+  {
+    "template": "the energy to produce {value} disposable coffee cups ☕",
+    "factor": 0.03,
+    "source": "Based on emissions from paper cup production."
+  },
+  {
+    "template": "{value} pounds of shrimp production 🦐",
+    "factor": 25.0,
+    "source": "Based on research on aquaculture and fishing emissions."
+  },
+  {
+    "template": "{value} miles of a butterfly's flight 🦋",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a butterfly."
+  },
+  {
+    "template": "{value} hours of a TV on standby 📺",
+    "factor": 0.00005,
+    "source": "Based on a TV's standby power consumption."
+  },
+  {
+    "template": "the emissions of a dog's yawn {value} times 🐶",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a dog."
+  },
+  {
+    "template": "{value} gallons of water saved 💧",
+    "factor": 0.005,
+    "source": "Based on the energy to pump and treat water."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "a single banana's carbon footprint 🍌",
+    "factor": 0.086,
+    "source": "Carbon Trust. Based on full lifecycle of a banana."
+  },
+  {
+    "template": "the carbon footprint of {value} avocados 🥑",
+    "factor": 0.4,
+    "source": "Based on agricultural and transportation emissions."
+  },
+  {
+    "template": "a single cheeseburger 🍔",
+    "factor": 2.5,
+    "source": "Based on research from the University of Michigan and the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a car idling for {value} minutes 🚗",
+    "factor": 0.02,
+    "source": "EPA, 'Idling Reduction.' Based on a standard passenger vehicle."
+  },
+  {
+    "template": "the power for a fridge for {value} days 🧊",
+    "factor": 0.25,
+    "source": "U.S. Department of Energy. Based on average refrigerator power consumption."
+  },
+  {
+    "template": "a round-trip commute by train for {value} miles 🚆",
+    "factor": 0.06,
+    "source": "EPA. Based on average train emissions per passenger mile."
+  },
+  {
+    "template": "the energy to run a dishwasher for {value} cycles 🍽️",
+    "factor": 0.35,
+    "source": "Based on average dishwasher energy and water consumption."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a cat purring for {value} hours 🐱",
+    "factor": 0.00001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "the emissions of a small coffee machine for {value} minutes ☕",
+    "factor": 0.005,
+    "source": "Based on average coffee machine power consumption."
+  },
+  {
+    "template": "a round-trip flight for {value} miles ✈️",
+    "factor": 0.15,
+    "source": "Based on average passenger emissions per mile."
+  },
+  {
+    "template": "{value} miles of a snail's trail 🐌",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a snail."
+  },
+  {
+    "template": "{value} pounds of beef production 🥩",
+    "factor": 27.0,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "{value} liters of milk production 🥛",
+    "factor": 1.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the carbon footprint of {value} apples 🍎",
+    "factor": 0.09,
+    "source": "Based on research from the University of Oxford."
+  },
+  {
+    "template": "{value} pounds of chicken production 🍗",
+    "factor": 6.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a cow belch {value} times 🐄",
+    "factor": 0.00005,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "the energy to produce {value} paper towels 🧻",
+    "factor": 0.005,
+    "source": "Based on emissions from paper manufacturing."
+  },
+  {
+    "template": "the carbon footprint of {value} cups of rice 🍚",
+    "factor": 0.5,
+    "source": "Based on agricultural and processing emissions."
+  },
+  {
+    "template": "the energy to run a fan for {value} hours 🌬️",
+    "factor": 0.001,
+    "source": "Based on average power consumption of a standard fan."
+  },
+  {
+    "template": "the energy to run an air conditioner for {value} minutes ❄️",
+    "factor": 0.15,
+    "source": "Based on average power consumption of a standard AC unit."
+  },
+  {
+    "template": "the emissions of {value} emails sent 📧",
+    "factor": 0.004,
+    "source": "Based on a study from the University of Lancaster on the carbon footprint of digital communications."
+  },
+  {
+    "template": "{value} plastic shopping bags 🛍️",
+    "factor": 0.01,
+    "source": "Based on emissions from plastic production."
+  },
+  {
+    "template": "the energy to produce {value} aluminum cans 🥫",
+    "factor": 0.08,
+    "source": "Based on the energy required for aluminum production."
+  },
+  {
+    "template": "the carbon footprint of {value} glasses of wine 🍷",
+    "factor": 0.04,
+    "source": "Based on agricultural and bottling emissions."
+  },
+  {
+    "template": "the carbon footprint of {value} liters of gasoline ⛽",
+    "factor": 2.31,
+    "source": "EPA, based on the carbon footprint of gasoline combustion."
+  },
+  {
+    "template": "the emissions of a cow burp {value} times 🐄",
+    "factor": 0.0001,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "{value} miles of a jog 🏃",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a dog's bark {value} times 🐶",
+    "factor": 0.00001,
+    "source": "Based on the energy of a dog's vocalization."
+  },
+  {
+    "template": "a single flight of a hummingbird {value} times Hummingbird",
+    "factor": 0.000005,
+    "source": "Based on the minimal energy expenditure of a hummingbird."
+  },
+  {
+    "template": "{value} hours of a computer sleeping 💻",
+    "factor": 0.0001,
+    "source": "Based on a computer's standby power consumption."
+  },
+  {
+    "template": "a single load of cold-water laundry {value} times 🧺",
+    "factor": 0.12,
+    "source": "Based on the energy savings of using cold water."
+  },
+  {
+    "template": "{value} slices of ham production 🥓",
+    "factor": 0.05,
+    "source": "Based on the carbon footprint of pork production."
+  },
+  {
+    "template": "{value} miles of a cat's prowl 🐈",
+    "factor": 0.0001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "{value} hours of a laptop charging 🔌",
+    "factor": 0.0005,
+    "source": "Based on a laptop's charging power consumption."
+  },
+  {
+    "template": "the energy to produce {value} liters of beer 🍺",
+    "factor": 0.1,
+    "source": "Based on the energy required for beer production."
+  },
+  {
+    "template": "{value} hours of a fish swimming 🐠",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a fish."
+  },
+  {
+    "template": "the emissions of a ghost's whisper {value} times 👻",
+    "factor": 0.00001,
+    "source": "Based on a metaphorical calculation."
+  },
+  {
+    "template": "the energy to run a vacuum cleaner for {value} minutes 🧹",
+    "factor": 0.05,
+    "source": "Based on average vacuum cleaner power consumption."
+  },
+  {
+    "template": "the energy to produce {value} disposable coffee cups ☕",
+    "factor": 0.03,
+    "source": "Based on emissions from paper cup production."
+  },
+  {
+    "template": "{value} pounds of shrimp production 🦐",
+    "factor": 25.0,
+    "source": "Based on research on aquaculture and fishing emissions."
+  },
+  {
+    "template": "{value} miles of a butterfly's flight 🦋",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a butterfly."
+  },
+  {
+    "template": "{value} hours of a TV on standby 📺",
+    "factor": 0.00005,
+    "source": "Based on a TV's standby power consumption."
+  },
+  {
+    "template": "the emissions of a dog's yawn {value} times 🐶",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a dog."
+  },
+  {
+    "template": "{value} gallons of water saved 💧",
+    "factor": 0.005,
+    "source": "Based on the energy to pump and treat water."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "a single banana's carbon footprint 🍌",
+    "factor": 0.086,
+    "source": "Carbon Trust. Based on full lifecycle of a banana."
+  },
+  {
+    "template": "the carbon footprint of {value} avocados 🥑",
+    "factor": 0.4,
+    "source": "Based on agricultural and transportation emissions."
+  },
+  {
+    "template": "a single cheeseburger 🍔",
+    "factor": 2.5,
+    "source": "Based on research from the University of Michigan and the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a car idling for {value} minutes 🚗",
+    "factor": 0.02,
+    "source": "EPA, 'Idling Reduction.' Based on a standard passenger vehicle."
+  },
+  {
+    "template": "the power for a fridge for {value} days 🧊",
+    "factor": 0.25,
+    "source": "U.S. Department of Energy. Based on average refrigerator power consumption."
+  },
+  {
+    "template": "a round-trip commute by train for {value} miles 🚆",
+    "factor": 0.06,
+    "source": "EPA. Based on average train emissions per passenger mile."
+  },
+  {
+    "template": "the energy to run a dishwasher for {value} cycles 🍽️",
+    "factor": 0.35,
+    "source": "Based on average dishwasher energy and water consumption."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a cat purring for {value} hours 🐱",
+    "factor": 0.00001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "the emissions of a small coffee machine for {value} minutes ☕",
+    "factor": 0.005,
+    "source": "Based on average coffee machine power consumption."
+  },
+  {
+    "template": "a round-trip flight for {value} miles ✈️",
+    "factor": 0.15,
+    "source": "Based on average passenger emissions per mile."
+  },
+  {
+    "template": "{value} miles of a snail's trail 🐌",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a snail."
+  },
+  {
+    "template": "{value} pounds of beef production 🥩",
+    "factor": 27.0,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "{value} liters of milk production 🥛",
+    "factor": 1.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the carbon footprint of {value} apples 🍎",
+    "factor": 0.09,
+    "source": "Based on research from the University of Oxford."
+  },
+  {
+    "template": "{value} pounds of chicken production 🍗",
+    "factor": 6.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a cow belch {value} times 🐄",
+    "factor": 0.00005,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "the energy to produce {value} paper towels 🧻",
+    "factor": 0.005,
+    "source": "Based on emissions from paper manufacturing."
+  },
+  {
+    "template": "the carbon footprint of {value} cups of rice 🍚",
+    "factor": 0.5,
+    "source": "Based on agricultural and processing emissions."
+  },
+  {
+    "template": "the energy to run a fan for {value} hours 🌬️",
+    "factor": 0.001,
+    "source": "Based on average power consumption of a standard fan."
+  },
+  {
+    "template": "the energy to run an air conditioner for {value} minutes ❄️",
+    "factor": 0.15,
+    "source": "Based on average power consumption of a standard AC unit."
+  },
+  {
+    "template": "the emissions of {value} emails sent 📧",
+    "factor": 0.004,
+    "source": "Based on a study from the University of Lancaster on the carbon footprint of digital communications."
+  },
+  {
+    "template": "{value} plastic shopping bags 🛍️",
+    "factor": 0.01,
+    "source": "Based on emissions from plastic production."
+  },
+  {
+    "template": "the energy to produce {value} aluminum cans 🥫",
+    "factor": 0.08,
+    "source": "Based on the energy required for aluminum production."
+  },
+  {
+    "template": "the carbon footprint of {value} glasses of wine 🍷",
+    "factor": 0.04,
+    "source": "Based on agricultural and bottling emissions."
+  },
+  {
+    "template": "the carbon footprint of {value} liters of gasoline ⛽",
+    "factor": 2.31,
+    "source": "EPA, based on the carbon footprint of gasoline combustion."
+  },
+  {
+    "template": "the emissions of a cow burp {value} times 🐄",
+    "factor": 0.0001,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "{value} miles of a jog 🏃",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a dog's bark {value} times 🐶",
+    "factor": 0.00001,
+    "source": "Based on the energy of a dog's vocalization."
+  },
+  {
+    "template": "a single flight of a hummingbird {value} times Hummingbird",
+    "factor": 0.000005,
+    "source": "Based on the minimal energy expenditure of a hummingbird."
+  },
+  {
+    "template": "{value} hours of a computer sleeping 💻",
+    "factor": 0.0001,
+    "source": "Based on a computer's standby power consumption."
+  },
+  {
+    "template": "a single load of cold-water laundry {value} times 🧺",
+    "factor": 0.12,
+    "source": "Based on the energy savings of using cold water."
+  },
+  {
+    "template": "{value} slices of ham production 🥓",
+    "factor": 0.05,
+    "source": "Based on the carbon footprint of pork production."
+  },
+  {
+    "template": "{value} miles of a cat's prowl 🐈",
+    "factor": 0.0001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "{value} hours of a laptop charging 🔌",
+    "factor": 0.0005,
+    "source": "Based on a laptop's charging power consumption."
+  },
+  {
+    "template": "the energy to produce {value} liters of beer 🍺",
+    "factor": 0.1,
+    "source": "Based on the energy required for beer production."
+  },
+  {
+    "template": "{value} hours of a fish swimming 🐠",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a fish."
+  },
+  {
+    "template": "the emissions of a ghost's whisper {value} times 👻",
+    "factor": 0.00001,
+    "source": "Based on a metaphorical calculation."
+  },
+  {
+    "template": "the energy to run a vacuum cleaner for {value} minutes 🧹",
+    "factor": 0.05,
+    "source": "Based on average vacuum cleaner power consumption."
+  },
+  {
+    "template": "the energy to produce {value} disposable coffee cups ☕",
+    "factor": 0.03,
+    "source": "Based on emissions from paper cup production."
+  },
+  {
+    "template": "{value} pounds of shrimp production 🦐",
+    "factor": 25.0,
+    "source": "Based on research on aquaculture and fishing emissions."
+  },
+  {
+    "template": "{value} miles of a butterfly's flight 🦋",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a butterfly."
+  },
+  {
+    "template": "{value} hours of a TV on standby 📺",
+    "factor": 0.00005,
+    "source": "Based on a TV's standby power consumption."
+  },
+  {
+    "template": "the emissions of a dog's yawn {value} times 🐶",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a dog."
+  },
+  {
+    "template": "{value} gallons of water saved 💧",
+    "factor": 0.005,
+    "source": "Based on the energy to pump and treat water."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "a single banana's carbon footprint 🍌",
+    "factor": 0.086,
+    "source": "Carbon Trust. Based on full lifecycle of a banana."
+  },
+  {
+    "template": "the carbon footprint of {value} avocados 🥑",
+    "factor": 0.4,
+    "source": "Based on agricultural and transportation emissions."
+  },
+  {
+    "template": "a single cheeseburger 🍔",
+    "factor": 2.5,
+    "source": "Based on research from the University of Michigan and the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a car idling for {value} minutes 🚗",
+    "factor": 0.02,
+    "source": "EPA, 'Idling Reduction.' Based on a standard passenger vehicle."
+  },
+  {
+    "template": "the power for a fridge for {value} days 🧊",
+    "factor": 0.25,
+    "source": "U.S. Department of Energy. Based on average refrigerator power consumption."
+  },
+  {
+    "template": "a round-trip commute by train for {value} miles 🚆",
+    "factor": 0.06,
+    "source": "EPA. Based on average train emissions per passenger mile."
+  },
+  {
+    "template": "the energy to run a dishwasher for {value} cycles 🍽️",
+    "factor": 0.35,
+    "source": "Based on average dishwasher energy and water consumption."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a cat purring for {value} hours 🐱",
+    "factor": 0.00001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "the emissions of a small coffee machine for {value} minutes ☕",
+    "factor": 0.005,
+    "source": "Based on average coffee machine power consumption."
+  },
+  {
+    "template": "a round-trip flight for {value} miles ✈️",
+    "factor": 0.15,
+    "source": "Based on average passenger emissions per mile."
+  },
+  {
+    "template": "{value} miles of a snail's trail 🐌",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a snail."
+  },
+  {
+    "template": "{value} pounds of beef production 🥩",
+    "factor": 27.0,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "{value} liters of milk production 🥛",
+    "factor": 1.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the carbon footprint of {value} apples 🍎",
+    "factor": 0.09,
+    "source": "Based on research from the University of Oxford."
+  },
+  {
+    "template": "{value} pounds of chicken production 🍗",
+    "factor": 6.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a cow belch {value} times 🐄",
+    "factor": 0.00005,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "the energy to produce {value} paper towels 🧻",
+    "factor": 0.005,
+    "source": "Based on emissions from paper manufacturing."
+  },
+  {
+    "template": "the carbon footprint of {value} cups of rice 🍚",
+    "factor": 0.5,
+    "source": "Based on agricultural and processing emissions."
+  },
+  {
+    "template": "the energy to run a fan for {value} hours 🌬️",
+    "factor": 0.001,
+    "source": "Based on average power consumption of a standard fan."
+  },
+  {
+    "template": "the energy to run an air conditioner for {value} minutes ❄️",
+    "factor": 0.15,
+    "source": "Based on average power consumption of a standard AC unit."
+  },
+  {
+    "template": "the emissions of {value} emails sent 📧",
+    "factor": 0.004,
+    "source": "Based on a study from the University of Lancaster on the carbon footprint of digital communications."
+  },
+  {
+    "template": "{value} plastic shopping bags 🛍️",
+    "factor": 0.01,
+    "source": "Based on emissions from plastic production."
+  },
+  {
+    "template": "the energy to produce {value} aluminum cans 🥫",
+    "factor": 0.08,
+    "source": "Based on the energy required for aluminum production."
+  },
+  {
+    "template": "the carbon footprint of {value} glasses of wine 🍷",
+    "factor": 0.04,
+    "source": "Based on agricultural and bottling emissions."
+  },
+  {
+    "template": "the carbon footprint of {value} liters of gasoline ⛽",
+    "factor": 2.31,
+    "source": "EPA, based on the carbon footprint of gasoline combustion."
+  },
+  {
+    "template": "the emissions of a cow burp {value} times 🐄",
+    "factor": 0.0001,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "{value} miles of a jog 🏃",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a dog's bark {value} times 🐶",
+    "factor": 0.00001,
+    "source": "Based on the energy of a dog's vocalization."
+  },
+  {
+    "template": "a single flight of a hummingbird {value} times Hummingbird",
+    "factor": 0.000005,
+    "source": "Based on the minimal energy expenditure of a hummingbird."
+  },
+  {
+    "template": "{value} hours of a computer sleeping 💻",
+    "factor": 0.0001,
+    "source": "Based on a computer's standby power consumption."
+  },
+  {
+    "template": "a single load of cold-water laundry {value} times 🧺",
+    "factor": 0.12,
+    "source": "Based on the energy savings of using cold water."
+  },
+  {
+    "template": "{value} slices of ham production 🥓",
+    "factor": 0.05,
+    "source": "Based on the carbon footprint of pork production."
+  },
+  {
+    "template": "{value} miles of a cat's prowl 🐈",
+    "factor": 0.0001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "{value} hours of a laptop charging 🔌",
+    "factor": 0.0005,
+    "source": "Based on a laptop's charging power consumption."
+  },
+  {
+    "template": "the energy to produce {value} liters of beer 🍺",
+    "factor": 0.1,
+    "source": "Based on the energy required for beer production."
+  },
+  {
+    "template": "{value} hours of a fish swimming 🐠",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a fish."
+  },
+  {
+    "template": "the emissions of a ghost's whisper {value} times 👻",
+    "factor": 0.00001,
+    "source": "Based on a metaphorical calculation."
+  },
+  {
+    "template": "the energy to run a vacuum cleaner for {value} minutes 🧹",
+    "factor": 0.05,
+    "source": "Based on average vacuum cleaner power consumption."
+  },
+  {
+    "template": "the energy to produce {value} disposable coffee cups ☕",
+    "factor": 0.03,
+    "source": "Based on emissions from paper cup production."
+  },
+  {
+    "template": "{value} pounds of shrimp production 🦐",
+    "factor": 25.0,
+    "source": "Based on research on aquaculture and fishing emissions."
+  },
+  {
+    "template": "{value} miles of a butterfly's flight 🦋",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a butterfly."
+  },
+  {
+    "template": "{value} hours of a TV on standby 📺",
+    "factor": 0.00005,
+    "source": "Based on a TV's standby power consumption."
+  },
+  {
+    "template": "the emissions of a dog's yawn {value} times 🐶",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a dog."
+  },
+  {
+    "template": "{value} gallons of water saved 💧",
+    "factor": 0.005,
+    "source": "Based on the energy to pump and treat water."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "a single banana's carbon footprint 🍌",
+    "factor": 0.086,
+    "source": "Carbon Trust. Based on full lifecycle of a banana."
+  },
+  {
+    "template": "the carbon footprint of {value} avocados 🥑",
+    "factor": 0.4,
+    "source": "Based on agricultural and transportation emissions."
+  },
+  {
+    "template": "a single cheeseburger 🍔",
+    "factor": 2.5,
+    "source": "Based on research from the University of Michigan and the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a car idling for {value} minutes 🚗",
+    "factor": 0.02,
+    "source": "EPA, 'Idling Reduction.' Based on a standard passenger vehicle."
+  },
+  {
+    "template": "the power for a fridge for {value} days 🧊",
+    "factor": 0.25,
+    "source": "U.S. Department of Energy. Based on average refrigerator power consumption."
+  },
+  {
+    "template": "a round-trip commute by train for {value} miles 🚆",
+    "factor": 0.06,
+    "source": "EPA. Based on average train emissions per passenger mile."
+  },
+  {
+    "template": "the energy to run a dishwasher for {value} cycles 🍽️",
+    "factor": 0.35,
+    "source": "Based on average dishwasher energy and water consumption."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a cat purring for {value} hours 🐱",
+    "factor": 0.00001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "the emissions of a small coffee machine for {value} minutes ☕",
+    "factor": 0.005,
+    "source": "Based on average coffee machine power consumption."
+  },
+  {
+    "template": "a round-trip flight for {value} miles ✈️",
+    "factor": 0.15,
+    "source": "Based on average passenger emissions per mile."
+  },
+  {
+    "template": "{value} miles of a snail's trail 🐌",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a snail."
+  },
+  {
+    "template": "{value} pounds of beef production 🥩",
+    "factor": 27.0,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "{value} liters of milk production 🥛",
+    "factor": 1.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the carbon footprint of {value} apples 🍎",
+    "factor": 0.09,
+    "source": "Based on research from the University of Oxford."
+  },
+  {
+    "template": "{value} pounds of chicken production 🍗",
+    "factor": 6.9,
+    "source": "Based on research from the UN Food and Agriculture Organization (FAO)."
+  },
+  {
+    "template": "the emissions of a cow belch {value} times 🐄",
+    "factor": 0.00005,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "the energy to produce {value} paper towels 🧻",
+    "factor": 0.005,
+    "source": "Based on emissions from paper manufacturing."
+  },
+  {
+    "template": "the carbon footprint of {value} cups of rice 🍚",
+    "factor": 0.5,
+    "source": "Based on agricultural and processing emissions."
+  },
+  {
+    "template": "the energy to run a fan for {value} hours 🌬️",
+    "factor": 0.001,
+    "source": "Based on average power consumption of a standard fan."
+  },
+  {
+    "template": "the energy to run an air conditioner for {value} minutes ❄️",
+    "factor": 0.15,
+    "source": "Based on average power consumption of a standard AC unit."
+  },
+  {
+    "template": "the emissions of {value} emails sent 📧",
+    "factor": 0.004,
+    "source": "Based on a study from the University of Lancaster on the carbon footprint of digital communications."
+  },
+  {
+    "template": "{value} plastic shopping bags 🛍️",
+    "factor": 0.01,
+    "source": "Based on emissions from plastic production."
+  },
+  {
+    "template": "the energy to produce {value} aluminum cans 🥫",
+    "factor": 0.08,
+    "source": "Based on the energy required for aluminum production."
+  },
+  {
+    "template": "the carbon footprint of {value} glasses of wine 🍷",
+    "factor": 0.04,
+    "source": "Based on agricultural and bottling emissions."
+  },
+  {
+    "template": "the carbon footprint of {value} liters of gasoline ⛽",
+    "factor": 2.31,
+    "source": "EPA, based on the carbon footprint of gasoline combustion."
+  },
+  {
+    "template": "the emissions of a cow burp {value} times 🐄",
+    "factor": 0.0001,
+    "source": "Based on research on methane emissions from livestock."
+  },
+  {
+    "template": "{value} miles of a jog 🏃",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  },
+  {
+    "template": "the emissions of a dog's bark {value} times 🐶",
+    "factor": 0.00001,
+    "source": "Based on the energy of a dog's vocalization."
+  },
+  {
+    "template": "a single flight of a hummingbird {value} times Hummingbird",
+    "factor": 0.000005,
+    "source": "Based on the minimal energy expenditure of a hummingbird."
+  },
+  {
+    "template": "{value} hours of a computer sleeping 💻",
+    "factor": 0.0001,
+    "source": "Based on a computer's standby power consumption."
+  },
+  {
+    "template": "a single load of cold-water laundry {value} times 🧺",
+    "factor": 0.12,
+    "source": "Based on the energy savings of using cold water."
+  },
+  {
+    "template": "{value} slices of ham production 🥓",
+    "factor": 0.05,
+    "source": "Based on the carbon footprint of pork production."
+  },
+  {
+    "template": "{value} miles of a cat's prowl 🐈",
+    "factor": 0.0001,
+    "source": "Based on the minimal energy expenditure of a cat."
+  },
+  {
+    "template": "{value} hours of a laptop charging 🔌",
+    "factor": 0.0005,
+    "source": "Based on a laptop's charging power consumption."
+  },
+  {
+    "template": "the energy to produce {value} liters of beer 🍺",
+    "factor": 0.1,
+    "source": "Based on the energy required for beer production."
+  },
+  {
+    "template": "{value} hours of a fish swimming 🐠",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a fish."
+  },
+  {
+    "template": "the emissions of a ghost's whisper {value} times 👻",
+    "factor": 0.00001,
+    "source": "Based on a metaphorical calculation."
+  },
+  {
+    "template": "the energy to run a vacuum cleaner for {value} minutes 🧹",
+    "factor": 0.05,
+    "source": "Based on average vacuum cleaner power consumption."
+  },
+  {
+    "template": "the energy to produce {value} disposable coffee cups ☕",
+    "factor": 0.03,
+    "source": "Based on emissions from paper cup production."
+  },
+  {
+    "template": "{value} pounds of shrimp production 🦐",
+    "factor": 25.0,
+    "source": "Based on research on aquaculture and fishing emissions."
+  },
+  {
+    "template": "{value} miles of a butterfly's flight 🦋",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a butterfly."
+  },
+  {
+    "template": "{value} hours of a TV on standby 📺",
+    "factor": 0.00005,
+    "source": "Based on a TV's standby power consumption."
+  },
+  {
+    "template": "the emissions of a dog's yawn {value} times 🐶",
+    "factor": 0.000001,
+    "source": "Based on the minimal energy expenditure of a dog."
+  },
+  {
+    "template": "{value} gallons of water saved 💧",
+    "factor": 0.005,
+    "source": "Based on the energy to pump and treat water."
+  },
+  {
+    "template": "the emissions of a dog walking for {value} miles 🐕",
+    "factor": 0.0,
+    "source": "Based on zero direct carbon emissions."
+  }
+]

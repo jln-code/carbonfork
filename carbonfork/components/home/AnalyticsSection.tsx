@@ -7,29 +7,83 @@ interface AnalyticsSectionProps {
 }
 
 export function AnalyticsSection({ weeklyData }: AnalyticsSectionProps) {
+  // --- Analytics Logic ---
+  const calculateWeeklyTrend = () => {
+    if (weeklyData.length < 7) {
+      return { value: "--", color: "#60a5fa" };
+    }
+
+    const currentWeekWaste = weeklyData.reduce((sum, d) => sum + d.waste, 0);
+
+    // This is a mock calculation, for a real app you'd get the previous week's data from the DB
+    const lastWeekWaste = currentWeekWaste * 1.3; // Simulating a 30% reduction
+
+    if (currentWeekWaste === 0 || lastWeekWaste === 0) {
+      return { value: "N/A", color: "#eab308" };
+    }
+
+    const change = ((lastWeekWaste - currentWeekWaste) / lastWeekWaste) * 100;
+    const trendIcon = change > 0 ? "trending-down" : "trending-up";
+    const color = change > 0 ? "#4ade80" : "#ef4444";
+    const formattedValue = `↓ ${Math.abs(change).toFixed(0)}%`;
+
+    return { icon: trendIcon, value: formattedValue, color };
+  };
+
+  const findBestDay = () => {
+    if (weeklyData.length === 0) {
+      return { value: "--", description: "-- lbs waste" };
+    }
+
+    const bestDay = weeklyData.reduce((prev, current) =>
+      prev.waste < current.waste ? prev : current
+    );
+
+    return {
+      value: bestDay.day,
+      description: `${bestDay.waste.toFixed(1)} lbs waste`,
+    };
+  };
+
+  const getMonthlyGoal = () => {
+    // Mocking a goal for demonstration. In a real app, this would be user-defined.
+    const monthlyGoal = 50; // 50 lbs of waste per month
+    const totalWeeklyWaste = weeklyData.reduce((sum, d) => sum + d.waste, 0);
+    const progress = (totalWeeklyWaste / (monthlyGoal / 4)) * 100; // Assuming 4 weeks in a month
+    const progressText = `${Math.min(progress, 100).toFixed(0)}%`;
+    const color = progress <= 70 ? "#4ade80" : progress <= 90 ? "#eab308" : "#ef4444";
+    
+    return { value: progressText, description: "progress", color };
+  };
+
+  const weeklyTrend = calculateWeeklyTrend();
+  const bestDay = findBestDay();
+  const monthlyGoal = getMonthlyGoal();
+
   const insights = [
     {
-      icon: "trending-down",
+      icon: weeklyTrend.icon || "trending-down",
       title: "Weekly Trend",
-      value: "↓ 23%",
+      value: weeklyTrend.value,
       description: "vs last week",
-      color: "#4ade80",
+      color: weeklyTrend.color,
     },
     {
       icon: "calendar",
       title: "Best Day",
-      value: "Wednesday",
-      description: "0.5 lbs waste",
+      value: bestDay.value,
+      description: bestDay.description,
       color: "#60a5fa",
     },
     {
       icon: "target",
       title: "Monthly Goal",
-      value: "78%",
-      description: "progress",
-      color: "#a78bfa",
+      value: monthlyGoal.value,
+      description: monthlyGoal.description,
+      color: monthlyGoal.color,
     },
   ];
+  // --- End Analytics Logic ---
 
   const maxWaste = Math.max(...weeklyData.map((d) => d.waste));
 

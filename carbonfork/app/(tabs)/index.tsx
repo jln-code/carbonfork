@@ -124,7 +124,11 @@ export default function App() {
 
           {/* Calendar Widget */}
           <View style={styles.calendarContainer}>
-            <CalendarWidget onDateClick={handleDateClick} />
+            <CalendarWidget
+              onDateClick={handleDateClick}
+              meals={meals}
+              maxDailyWaste={maxDailyWaste}
+            />
           </View>
 
           {/* Analytics Section */}

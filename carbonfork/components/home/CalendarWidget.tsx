@@ -4,18 +4,28 @@ import Icon from "react-native-vector-icons/Feather";
 
 interface CalendarWidgetProps {
   onDateClick: (date: Date) => void;
+  meals: any[];
+  maxDailyWaste: number;
 }
 
-export function CalendarWidget({ onDateClick }: CalendarWidgetProps) {
+export function CalendarWidget({
+  onDateClick,
+  meals,
+  maxDailyWaste,
+}: CalendarWidgetProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Mock data for waste levels throughout the year
+  // Get waste level for a specific date from the real meals data
   const getWasteLevelForDate = (date: Date) => {
-    const day = date.getDate();
-    const month = date.getMonth();
-    // Create some variation in waste levels
-    return ((day * month * 17) % 100) / 100;
+    const dateString = date.toISOString().split("T")[0];
+    const dailyWaste = meals.reduce((sum, meal) => {
+      if (meal.meal_date === dateString) {
+        return sum + meal.carbon_footprint;
+      }
+      return sum;
+    }, 0);
+    return dailyWaste;
   };
 
   const getDaysInMonth = (date: Date) => {
@@ -51,6 +61,7 @@ export function CalendarWidget({ onDateClick }: CalendarWidgetProps) {
     const daysInMonth = getDaysInMonth(currentDate);
     const firstDay = getFirstDayOfMonth(currentDate);
     const days = [];
+    const today = new Date();
 
     // Empty cells for days before month starts
     for (let i = 0; i < firstDay; i++) {
@@ -64,12 +75,25 @@ export function CalendarWidget({ onDateClick }: CalendarWidgetProps) {
         currentDate.getMonth(),
         day
       );
-      const wasteLevel = getWasteLevelForDate(date);
-      const isToday = date.toDateString() === new Date().toDateString();
+      const isToday = date.toDateString() === today.toDateString();
 
-      let backgroundColor = "rgba(16, 185, 129, 0.2)";
-      if (wasteLevel > 0.7) backgroundColor = "rgba(239, 68, 68, 0.2)";
-      else if (wasteLevel > 0.3) backgroundColor = "rgba(249, 115, 22, 0.2)";
+      // Check if the date is in the future
+      let backgroundColor;
+      if (date.setHours(0, 0, 0, 0) > today.setHours(0, 0, 0, 0)) {
+        backgroundColor = "rgba(100, 149, 237, 0.1)";
+      } else {
+        const dailyWaste = getWasteLevelForDate(date);
+        // Determine background color based on actual waste data
+        backgroundColor = "rgba(16, 185, 129, 0.2)"; // Low waste (default)
+        if (maxDailyWaste > 0) {
+          const wastePercentage = dailyWaste / maxDailyWaste;
+          if (wastePercentage > 0.7) {
+            backgroundColor = "rgba(239, 68, 68, 0.2)"; // High waste
+          } else if (wastePercentage > 0.3) {
+            backgroundColor = "rgba(249, 115, 22, 0.2)"; // Medium waste
+          }
+        }
+      }
 
       days.push(
         <TouchableOpacity
@@ -148,6 +172,8 @@ export function CalendarWidget({ onDateClick }: CalendarWidgetProps) {
       <View style={styles.calendarGrid}>{renderCalendar()}</View>
 
       <View style={styles.legend}>
+        <View style={styles.legendItem}>
+        </View>
         <View style={styles.legendItem}>
           <View
             style={[
@@ -247,6 +273,7 @@ const styles = StyleSheet.create({
   calendarGrid: {
     flexDirection: "row",
     flexWrap: "wrap",
+    justifyContent: 'flex-start',
     gap: 4,
   },
   calendarDay: {
