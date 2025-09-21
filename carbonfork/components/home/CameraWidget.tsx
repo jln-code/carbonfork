@@ -4,6 +4,7 @@ import Icon from "react-native-vector-icons/Feather";
 import { LinearGradient } from "expo-linear-gradient";
 import { supabase } from "@/lib/supabase";
 import CameraModal from "../CameraModal";
+import { sendImageToGemini } from "@/services/gemini";
 
 export function CameraWidget() {
   const [isCameraVisible, setCameraVisible] = useState(false);
@@ -18,6 +19,7 @@ export function CameraWidget() {
     console.log("Photo captured:", photoUri);
 
     // You can save to storage, upload to server, etc.
+    sendImageToGemini(photoUri);
     Alert.alert("Success!", "Photo captured successfully!");
   };
 
